@@ -1,5 +1,5 @@
 \documentclass[]{article} 
-\usepackage[english,catalan]{babel}
+\usepackage[english]{babel} %,catalan
 \usepackage{csquotes}
 \usepackage{graphicx} % Imatges
 \usepackage{fancyhdr}
@@ -10,8 +10,11 @@
 \usepackage{listings}
 \usepackage{enumitem}
 \usepackage{pdfpages}
-\usepackage[notes,backend=biber,defernumbers=true]{biblatex-chicago}
-\bibliography{MemoriaPractiques}
+\usepackage[backend=biber,citestyle=chem-acs]{biblatex}
+%\usepackage{biblatex}
+\addbibresource{TFG.bib}
+%\bibliography{TFG}
+%\bibliography{MemoriaPractiques}
 \usepackage{setspace}
 \usepackage{rotating}
 \usepackage{censor}
@@ -139,6 +142,8 @@
 
 % TABLE OF CONTENTS
 \tableofcontents
+\clearpage
+\newpage
 
 \section{Preface}\label{preface}
 \subsection{The KAIZEN Philosofy}\label{philosofy}
@@ -172,7 +177,7 @@ and sustainable changes in the long term.
 At the beginning of the 21st century, Toyota Motor Company surpassed General Motors and
 became the world leader in automobile production, expanding and elevating the Kaizen concept
 for its key role in the company’s success. Kaizen’s methodology is based on five
-fundamental principles:
+fundamental principles described in \citeauthor{massaki_gemba_2015}'s book \cite{massaki_gemba_2015} :
 \begin{itemize}
   \item Create customer value
     \subitem Value is what the customer is willing to pay for. Using a market-in approach to make
@@ -180,9 +185,37 @@ informed decisions based on what the customers want and offer them that in the b
 possible, improving customer experience.
   
   \item Create flow efficiency
-\end{itemize}
+    \subitem Flow efficiency can be obtained through the elimination of three Ms: Muda (waste), Mura (unevennes) and Muri(overburden).
+    The concept of Muda primarily originated from Taiichi Ohno’s production philosophy in the
+    early 1950s. He defined, in the industrial context he was inserted, seven sources of Muda:
+    overproduction, waiting, inventory, motion, transportation, over-processing and defects. All
+    the activities that do not add value to the process are considered Muda. Fujio Cho, former
+    President of Toyota, defined waste as "anything other than the minimum amount of equipment, materials, parts, space and worker’s time, which are absolutely essential to add value
+    to the product". Eliminating waste is the most effective way to increase productivity and
+    decrease costs.
+    Although Muda has gained bigger awareness, comprehending all three concepts allows for
+    a greater understanding of Lean (Netland and Powell, 2016). Mura is the variation in a
+    process that is not caused by the final customer, for example highs and lows in the planned
+    production due to the production system or the irregular work rhythm. Leveling production
+    using JIT can eliminate this irregularities, avoiding work spikes and long waiting times for
+    workers. Muri means to overburden equipments or workers, demanding a faster rhythm for
+    a longer period than expected. While in equipments it can provoke defects and failures, in
+    people it can result in safety issues.
 
+  \item Be Gemba oriented
+    \subitem Gemba is the place where value is added. Problems should be identified and solved there, at their root cause.
+    Central to Kaizen is \textit{genchi genbutsu} (go and see for yourself). Going to the Gemba means going to the place where the action really happens, to be able to thoroughly observe the reality of the processes.
+  \item Empower people
+    \subitem Respect for people is a fundamental principle of the Kaizen philosophy. Kaizen recognizes that people are not the problem, processes are. It intends to improve every day, everywhere, with everyone, training all employees and encouraging people to think and share their own improvement ideas, systematically. It is in management’s biggest interest to create the best possible conditions for everyone to do the best possible work.
+  \item Be scientific and transparent
+    \subitem As important as identifying problems, is knowing how to explain and substantiate one’sfindings, supporting them with data. Visual Management is a basal tool of Kaizen, that highlights problems and allows for a quicker reaction to them.
+\end{itemize}
 \clearpage
 \newpage
+
+\section{The Problem at hand}
+\subsection{Introducing the company}
+
+Now that we have introduce the base methodology of Kaizen we must 
 %\printbibliography[heading=bibnumbered]
 \end{document}
