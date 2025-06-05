@@ -138,7 +138,7 @@
 \section{Resumen}\label{resumen}
 \newpage
 
-\section{Glossary}
+\section{Glossary}\label{glossary}
 \newpage
 
 % TABLE OF CONTENTS
@@ -214,7 +214,7 @@ possible, improving customer experience.
 \clearpage
 \newpage
 
-\section{The Problem at hand}
+\section{The Problem at hand}\label{The problem}
 \subsection{Introducing the company}
 
 Now that we have introduce the base methodology of Kaizen we must understand the focus of this work.
@@ -250,9 +250,51 @@ Each \textit{Kaizen Event} will be:
     \subitem Pilot: "Liquids" Line
     \subitem KPI: Line Productivity
   \item Improvement of planning
-    \subitem Pilot: Sourcing and production of PAC area.
-    \subitem KPI: 
+    \subitem Pilot: Sourcing and production planning of PAC area.
+    \subitem KPI: OTIF 
+  \item Creating a system for daily management and continuous improvement culture.
+    \subitem Pilot: "Jars" Line
+    \subitem KPI: Economic impact of meetings sourced improvement ideas.
 \end{itemize}
+
+\clearpage
+\newpage
+\section{Improvement of Line Efficiency}\label{OEE_improve}
+\subsection{OEE and profits calculation method}
+Line efficiency is simply the ration between how much a production line is planned to be working in comparison on how much is it working in reality.
+To put it in fair terms:
+\begin{equation}\label{OEE_calc_1}
+  OEE=\frac{Actual\ unit\ output\ in\ time\ period\ (ud)}{Planned\ time\ (h) * Max\ working\ speed\ (ud/h)}
+\end{equation}
+
+With that definition we first have to acknowledge 3 main terms:
+
+\begin{enumerate}
+  \item Planned Time: Actual planned working time 
+  \item Disposable time: Time left after format changes, cleaning... 
+  \item Working Time: Production time without interruptions, micro stop, breakage, quality controls...
+\end{enumerate}
+
+This times describe one part of why the line is not working its full time.
+
+Another part to the OEE is the performance:
+Calculated by:
+\begin{equation}
+  \mu=\frac{Actual\ unit\ output\ in\ time\ period\ (ud)}{Planned\ time\ (h) * Max\ working\ speed\ (ud/h)}
+\end{equation}
+
+Then there is the units lost in quality issues which can be translated to:
+\begin{equation}
+  Q=\frac{Total\ OK\ unit\ output\ in\ time\ period}{Total\ Processed\ Units\ in\ Time\ Period}
+\end{equation}
+
+In the end we could express equation \ref{OEE_calc_1} in the form of:
+
+\begin{equation}\label{OEE_calc_2}
+  OEE=D*\mu*Q
+\end{equation}
+
+
 
 
 
