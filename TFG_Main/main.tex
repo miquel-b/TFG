@@ -18,6 +18,8 @@
 %\bibliography{MemoriaPractiques}
 \usepackage{setspace}
 \usepackage{rotating}
+\usepackage{amsmath}
+\usepackage{cancel}
 \usepackage{censor}
 \usepackage[paper=portrait,pagesize]{typearea}
 \usepackage{pdflscape}
@@ -37,7 +39,10 @@
     citecolor={blue!50!black},
     urlcolor={blue!80!black}
 }
-   
+
+\usepackage{glossaries}
+\loadglsentries{glossary.tex}
+\makeglossaries
 
 \title{KAIZEN STRATEGIES FOR IMPROVING PLANNING AND PRODUCTION FLOW IN PHARMACEUTICAL ENVIRONMENTS}
 \author{Miquel Borrell I Candelich}
@@ -81,7 +86,7 @@
 % ----------- implementation details -----------
 \makeatletter
 
-% from Martin's Scharrer's answer (https://tex.stackexchange.com/a/16004/21891)
+% from Martin's Scharrer's answer (ht\gls{tps}://tex.stackexchange.com/a/16004/21891)
 \def\confid@UL@putbox{%
   \ifx\UL@start\@empty%
   \else % not inner
@@ -139,6 +144,7 @@
 \newpage
 
 \section{Glossary}\label{glossary}
+\printglossaries
 \newpage
 
 % TABLE OF CONTENTS
@@ -147,20 +153,20 @@
 \newpage
 
 \section{Preface}\label{preface}
-\subsection{The KAIZEN Philosofy}\label{philosofy}
+\subsection{The \gls{kaizen} Philosophy}\label{philosofy}
 After World War II, Toyoda Kiichiro, then president of the Toyota Motor Company, saw the need
 to catch up with America to assure the survival of the automobile industry of Japan. Taiichi Ohno,
 Toyota’s engineer, had a challenge: how to build a diversified line of products with the limited
 equipment Toyota possessed at the time. Instead of using batch production, he designed a system
 of integrated production that used one-piece flow, demonstrating that a trade-off between quality
 and productivity does not need to exist (Netland and Powell, 2016). Aligned with other practices,
-Toyota Production System (TPS) was born to defy the premise that bigger batches mean lower
+Toyota Production System (\gls{tps}) was born to defy the premise that bigger batches mean lower
 costs.
 
-TPS, which ultimate goal is the absolute elimination of waste, is based in two pillars: just-in-
-time (JIT) and autonomation (automation with a human touch). The lack of the necessary capital
+\gls{tps}, which ultimate goal is the absolute elimination of waste, is based in two pillars: just-in-
+time (\gls{justintime}) and autonomation (automation with a human touch). The lack of the necessary capital
 resources to support high inventory levels was solved with the implementation of a just-in-time
-pull system. JIT means "to produce the necessary units at the necessary quantities at the necessary
+pull system. \gls{justintime} means "to produce the necessary units at the necessary quantities at the necessary
 time". A company establishing this flow throughout can approach zero inventory. With autonoma-
 tion, Toyota intended to create a built-in automatic checking system against small abnormalities.
 With this prevention mechanism, defective products were not produced. That was not the only
@@ -168,16 +174,16 @@ advantage. While the machine is working properly, employees are liberated. Conse
 worker could attend multiple machines, increasing production efficiency. Furthermore, autonoma-
 tion came as a facilitator of improvement. Stopping the machine creates awareness and, through
 the total comprehension of the problem, improvement measures can be taken. (Ohno, 1988)
-Lean, based on TPS, is a methodology that accentuates customer needs, to improve quality
+\gls{lean}, based on \gls{tps}, is a methodology that accentuates customer needs, to improve quality
 and reduce costs through continuous improvement and employee involvement (Graban, 2008).
-Kaizen, a Japanese word, refers to the concept of continuous improvement. It does not intend
-to be mistaken as innovation or disruption and elevated costs. On the other hand, Kaizen is about
+\gls{kaizen}, a Japanese word, refers to the concept of continuous improvement. It does not intend
+to be mistaken as innovation or disruption and elevated costs. On the other hand, \gls{kaizen} is about
 small and subtle improvements. It is a low-cost low-risk process that assures incremental progress
 and sustainable changes in the long term.
 
 At the beginning of the 21st century, Toyota Motor Company surpassed General Motors and
-became the world leader in automobile production, expanding and elevating the Kaizen concept
-for its key role in the company’s success. Kaizen’s methodology is based on five
+became the world leader in automobile production, expanding and elevating the \gls{kaizen} concept
+for its key role in the company’s success. \gls{kaizen}’s methodology is based on five
 fundamental principles described in \citeauthor{massaki_gemba_2015}'s book \cite{massaki_gemba_2015} :
 \begin{itemize}
   \item Create customer value
@@ -186,30 +192,30 @@ informed decisions based on what the customers want and offer them that in the b
 possible, improving customer experience.
   
   \item Create flow efficiency
-    \subitem Flow efficiency can be obtained through the elimination of three Ms: Muda (waste), Mura (unevenness) and Muri(overburden).
-    The concept of Muda primarily originated from Taiichi Ohno’s production philosophy in the
-    early 1950s. He defined, in the industrial context he was inserted, seven sources of Muda:
+    \subitem Flow efficiency can be obtained through the elimination of three Ms: \gls{muda} (waste), Mura (unevenness) and Muri(overburden).
+    The concept of \gls{muda} primarily originated from Taiichi Ohno’s production philosophy in the
+    early 1950s. He defined, in the industrial context he was inserted, seven sources of \gls{muda}:
     overproduction, waiting, inventory, motion, transportation, over-processing and defects. All
-    the activities that do not add value to the process are considered Muda. Fujio Cho, former
+    the activities that do not add value to the process are considered \gls{muda}. Fujio Cho, former
     President of Toyota, defined waste as "anything other than the minimum amount of equipment, materials, parts, space and worker’s time, which are absolutely essential to add value
     to the product". Eliminating waste is the most effective way to increase productivity and
     decrease costs.
-    Although Muda has gained bigger awareness, comprehending all three concepts allows for
-    a greater understanding of Lean (Netland and Powell, 2016). Mura is the variation in a
+    Although \gls{muda} has gained bigger awareness, comprehending all three concepts allows for
+    a greater understanding of \gls{lean} (Netland and Powell, 2016). Mura is the variation in a
     process that is not caused by the final customer, for example highs and lows in the planned
     production due to the production system or the irregular work rhythm. Leveling production
-    using JIT can eliminate this irregularities, avoiding work spikes and long waiting times for
+    using \gls{justintime} can eliminate this irregularities, avoiding work spikes and long waiting times for
     workers. Muri means to overburden equipment or workers, demanding a faster rhythm for
     a longer period than expected. While in equipment it can provoke defects and failures, in
     people it can result in safety issues.
 
-  \item Be Gemba oriented
-    \subitem Gemba is the place where value is added. Problems should be identified and solved there, at their root cause.
-    Central to Kaizen is \textit{genchi genbutsu} (go and see for yourself). Going to the Gemba means going to the place where the action really happens, to be able to thoroughly observe the reality of the processes.
+  \item Be \gls{gemba} oriented
+    \subitem \gls{gemba} is the place where value is added. Problems should be identified and solved there, at their root cause.
+    Central to \gls{kaizen} is \textit{genchi genbutsu} (go and see for yourself). Going to the \gls{gemba} means going to the place where the action really happens, to be able to thoroughly observe the reality of the processes.
   \item Empower people
-    \subitem Respect for people is a fundamental principle of the Kaizen philosophy. Kaizen recognizes that people are not the problem, processes are. It intends to improve every day, everywhere, with everyone, training all employees and encouraging people to think and share their own improvement ideas, systematically. It is in management’s biggest interest to create the best possible conditions for everyone to do the best possible work.
+    \subitem Respect for people is a fundamental principle of the \gls{kaizen} philosophy. Kaizen recognizes that people are not the problem, processes are. It intends to improve every day, everywhere, with everyone, training all employees and encouraging people to think and share their own improvement ideas, systematically. It is in management’s biggest interest to create the best possible conditions for everyone to do the best possible work.
   \item Be scientific and transparent
-    \subitem As important as identifying problems, is knowing how to explain and substantiate one’s findings, supporting them with data. Visual Management is a basal tool of Kaizen, that highlights problems and allows for a quicker reaction to them.
+    \subitem As important as identifying problems, is knowing how to explain and substantiate one’s findings, supporting them with data. Visual Management is a basal tool of \gls{kaizen}, that highlights problems and allows for a quicker reaction to them.
 \end{itemize}
 \clearpage
 \newpage
@@ -217,7 +223,7 @@ possible, improving customer experience.
 \section{The Problem at hand}\label{The problem}
 \subsection{Introducing the company}
 
-Now that we have introduce the base methodology of Kaizen we must understand the focus of this work.
+Now that we have introduce the base methodology of \gls{kaizen} we must understand the focus of this work.
 The project describe has been implemented in a Pharmacology Company located on the Catalonia area. It focuses primarily on providing Contract Manufacturing and Packaging Services for Medicines and Dietary Supplements, both for Human and Veterinary use.
 
 The facilities are equipped with state-of-the-art machinery and have a total area of 7.200 m², distributed across two facilities, one dedicated to the manufacturing of pharmaceuticals and the other to nutraceuticals.
@@ -239,65 +245,113 @@ There are several manufacturing areas and work lines:
 \end{itemize}
 
 \subsection{Scope and pilots}
-The scope of this project can be narrow down into 3 \textit{Kaizen Events}, each one will be implemented in a different work line as a pilot. 
+The scope of this project can be narrow down into 3 \textit{\gls{kaizen} Events}, each one will be implemented in a different work line as a pilot. 
 
-Each \textit{Kaizen Event} will be:
+Each \gls{kaizen} Event will be:
 \begin{itemize}
   \item Improvement of Line Efficiency.
     \subitem Pilot: "Jars" Line
-    \subitem KPI: Line OEE
+    \subitem \gls{kpi}: Line OEE
   \item Improvement of line Productivity
     \subitem Pilot: "Liquids" Line
-    \subitem KPI: Line Productivity
+    \subitem \gls{kpi}: Line Productivity
   \item Improvement of planning
     \subitem Pilot: Sourcing and production planning of PAC area.
-    \subitem KPI: OTIF 
+    \subitem \gls{kpi}: OTIF 
   \item Creating a system for daily management and continuous improvement culture.
     \subitem Pilot: "Jars" Line
-    \subitem KPI: Economic impact of meetings sourced improvement ideas.
+    \subitem \gls{kpi}: Economic impact of meetings sourced improvement ideas.
 \end{itemize}
 
 \clearpage
 \newpage
 \section{Improvement of Line Efficiency}\label{OEE_improve}
-\subsection{OEE and profits calculation method}
-Line efficiency is simply the ration between how much a production line is planned to be working in comparison on how much is it working in reality.
-To put it in fair terms:
-\begin{equation}\label{OEE_calc_1}
-  OEE=\frac{Actual\ unit\ output\ in\ time\ period\ (ud)}{Planned\ time\ (h) * Max\ working\ speed\ (ud/h)}
+\subsection{Objective Function}
+As in any optimization problem, we must first define the objective function. 
+In the \gls{kaizen} methodology, improvement efforts are directed toward what is most valuable for the client, often summarized by the principles of GQCDM:
+ \begin{itemize}
+   \item Growth
+   \item Quality
+   \item Cost
+   \item Delivery
+   \item Motivation
+ \end{itemize}
+ 
+In this particular \gls{kaizen} event, the focus will be on minimizing production cost. 
+Specifically, this is pursued by maximizing the sustainable production capacity of the line.
+
+\begin{equation}\label{Production_capacity_calc}
+   \text{Objective function} = \max \left( \frac{\text{Total output units}}{\text{Time window}} \right)
 \end{equation}
 
-With that definition we first have to acknowledge 3 main terms:
+In other words, equation \ref{Production_capacity_calc} seeks to maximize the throughput rate, for example the number of orders the factory can process in a year.
 
+This can also be expressed as:
+\begin{equation}\label{Production_capacity_calc_OEE}
+   \text{Objective function} = \max \left( \text{Rated line speed} \times OEE \right)
+\end{equation}
+
+Here, the rated line speed represents the theoretical design capacity, while $OEE$ adjusts for availability, performance, and quality losses. 
+The introduction of this efficiency factor will be discussed in the following section.
+
+It is evident that production output is strongly embedded in the cost structure of a company. 
+A significant share of manufacturing cost is related to the utilization of machines and operators. 
+By producing more in less time, the cost per unit decreases, thereby improving overall competitiveness.
+
+\subsection{OEE and profits calculation method}
+Overall Equipment Effectiveness (OEE) is a standard metric used to measure the efficiency of a production line. It identifies how much of the planned production time is truly productive. OEE is calculated by multiplying three core components: \nameref{availability}, \nameref{performance}, and \nameref{quality}.
+
+\subsubsection{Availability}\label{availability}
+Availability measures the proportion of scheduled production time during which equipment is operational and ready for use. It accounts for planned downtime, such as maintenance or shift breaks, as well as unplanned losses caused by equipment breakdowns or delays.
+\begin{equation}\label{eq:availability}
+  A = \frac{\text{Operating Time (h)}}{\text{Planned Time (h)}}
+\end{equation}
+With that definition we first have to acknowledge 2 main terms:
 \begin{enumerate}
-  \item Planned Time: Actual planned working time 
-  \item Disposable time: Time left after format changes, cleaning... 
-  \item Working Time: Production time without interruptions, micro stop, breakage, quality controls...
+  \item Planned Time: The total scheduled production time. 
+  \item Operating time: The Planned Time minus all planned stoppages like changeovers, cleaning, and scheduled breaks.
 \end{enumerate}
 
-This times describe one part of why the line is not working its full time.
+\subsubsection{Performance}\label{performance}
+Performance evaluates whether equipment is running at its optimal speed
+during production. It captures losses due to reduced speed or minor stoppages that may not
+halt production but reduce efficiency.
 
-Another part to the OEE is the performance:
-Calculated by:
-\begin{equation}
-  \mu=\frac{Actual\ unit\ output\ in\ time\ period\ (ud)}{Planned\ time\ (h) * Max\ working\ speed\ (ud/h)}
+\begin{equation}\label{eq:performance}
+  \mu = \frac{\text{Actual Units Produced (units)}}{\text{Operating Time (h)} \times \text{Nominal Speed (units/h)}}
 \end{equation}
 
-Then there is the units lost in quality issues which can be translated to:
-\begin{equation}
-  Q=\frac{Total\ OK\ unit\ output\ in\ time\ period}{Total\ Processed\ Units\ in\ Time\ Period}
+\subsubsection{Quality}\label{quality}
+Quality assesses the proportion of defect-free products produced relative to the total output. This metric highlights losses due to rework or defective items, which reduce the overall effectiveness of the production process.
+
+\begin{equation}\label{eq:quality}
+  Q=\frac{\text{Total OK unit output (units)}}{\text{Actual Units Produced (units)}}
 \end{equation}
 
-In the end we could express equation \ref{OEE_calc_1} in the form of:
+\subsubsection{OEE calculation}
+By combining these three components, we get the final OEE formula, which shows the overall efficiency of the production line.
 
-\begin{equation}\label{OEE_calc_2}
-  OEE=D*\mu*Q
+\begin{equation}\label{OEE_calc}
+  OEE=A*\mu*Q
 \end{equation}
 
+An OEE score of 100\% represents perfect equipment effectiveness, with no downtime, optimal
+performance, and zero defects. 
 
+Or in fair terms:
 
+\begin{equation}\label{OEE_calc_cancel_termns}
+  \begin{split}
+    OEE = \frac{\cancel{\text{Operating Time (h)}}}{\text{Planned Time (h)}} \times \frac{\cancel{\text{Actual Units Produced (units)}}}{\cancel{\text{Operating Time (h)}} \times \text{Nominal Speed (units/h)}} \times \\
+    \times \frac{\text{Total OK unit output (units)}}{\cancel{\text{Actual Units Produced (units)}}}=\frac{\text{Total OK unit output (units)}}{\text{Planned Time (h)} \times \text{Nominal Speed (units/h)}}
+\end{split}
+\end{equation}
 
-
+\begin{small}
+\begin{equation}\label{OEE_calc_extended}
+  OEE=A*\mu*Q=\frac{\text{Total OK unit output (units)}}{\text{Planned Time (h)} \times \text{Nominal Speed (units/h)}}
+\end{equation}
+\end{small}
 \clearpage
 \newpage
 \printbibliography[heading=bibnumbered]
