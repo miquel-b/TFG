@@ -215,7 +215,7 @@ possible, improving customer experience.
   \item Empower people
     \subitem Respect for people is a fundamental principle of the \gls{kaizen} philosophy. Kaizen recognizes that people are not the problem, processes are. It intends to improve every day, everywhere, with everyone, training all employees and encouraging people to think and share their own improvement ideas, systematically. It is in management’s biggest interest to create the best possible conditions for everyone to do the best possible work.
   \item Be scientific and transparent
-    \subitem As important as identifying problems, is knowing how to explain and substantiate one’s findings, supporting them with data. Visual Management is a basal tool of \gls{kaizen}, that highlights problems and allows for a quicker reaction to them.
+    \subitem As important as identifying problems, is knowing how to explain and substantiate one’s findings, supporting them with data. \gls{visualmanagement} is a basal tool of \gls{kaizen}, that highlights problems and allows for a quicker reaction to them.
 \end{itemize}
 \clearpage
 \newpage
@@ -287,7 +287,7 @@ Specifically, this is pursued by maximizing the sustainable production capacity 
 In other words, equation \ref{Production_capacity_calc} seeks to maximize the throughput rate, for example the number of orders the factory can process in a year.
 
 This can also be expressed as:
-\begin{equation}\label{Production_capacity_calc_OEE}
+\begin{equation}\label{eq:production_capacity_calc_OEE}
    \text{Objective function} = \max \left( \text{Rated line speed} \times OEE \right)
 \end{equation}
 
@@ -302,7 +302,7 @@ By producing more in less time, the cost per unit decreases, thereby improving o
 Overall Equipment Effectiveness (OEE) is a standard metric used to measure the efficiency of a production line. It identifies how much of the planned production time is truly productive. OEE is calculated by multiplying three core components: \nameref{availability}, \nameref{performance}, and \nameref{quality}.
 
 \subsubsection{Availability}\label{availability}
-Availability measures the proportion of scheduled production time during which equipment is operational and ready for use. It accounts for planned downtime, such as maintenance or shift breaks, as well as unplanned losses caused by equipment breakdowns or delays.
+Availability measures the proportion of scheduled production time during which equipment is operational and ready for use. It accounts for planned downtime, such as maintenance or shift breaks, as well as unplanned losses caused by equipment breakdowns or delays.\cite{calandreli_maximizing_2025}
 \begin{equation}\label{eq:availability}
   A = \frac{\text{Operating Time (h)}}{\text{Planned Time (h)}}
 \end{equation}
@@ -315,14 +315,14 @@ With that definition we first have to acknowledge 2 main terms:
 \subsubsection{Performance}\label{performance}
 Performance evaluates whether equipment is running at its optimal speed
 during production. It captures losses due to reduced speed or minor stoppages that may not
-halt production but reduce efficiency.
+halt production but reduce efficiency.\cite{calandreli_maximizing_2025}
 
 \begin{equation}\label{eq:performance}
   \mu = \frac{\text{Actual Units Produced (units)}}{\text{Operating Time (h)} \times \text{Nominal Speed (units/h)}}
 \end{equation}
 
 \subsubsection{Quality}\label{quality}
-Quality assesses the proportion of defect-free products produced relative to the total output. This metric highlights losses due to rework or defective items, which reduce the overall effectiveness of the production process.
+Quality assesses the proportion of defect-free products produced relative to the total output. This metric highlights losses due to rework or defective items, which reduce the overall effectiveness of the production process.\cite{calandreli_maximizing_2025}
 
 \begin{equation}\label{eq:quality}
   Q=\frac{\text{Total OK unit output (units)}}{\text{Actual Units Produced (units)}}
@@ -336,7 +336,7 @@ By combining these three components, we get the final OEE formula, which shows t
 \end{equation}
 
 An OEE score of 100\% represents perfect equipment effectiveness, with no downtime, optimal
-performance, and zero defects. 
+performance, and zero defects.\cite{pound_factory_2014} 
 
 Or in fair terms:
 
@@ -352,6 +352,12 @@ Or in fair terms:
   OEE=A*\mu*Q=\frac{\text{Total OK unit output (units)}}{\text{Planned Time (h)} \times \text{Nominal Speed (units/h)}}
 \end{equation}
 \end{small}
+
+\subsubsection{Profit Calculation}
+Now that the concept of $OEE$ is clear we could go back to equation \ref{eq:production_capacity_calc_OEE}. In \gls{kaizen} philosophy we focus on the non investment improvements. As we can infer changing the Nominal Speed of a line or machine could mean investing a huge amount of money in technology, instead of focusing on eliminating \gls{muda}. That's why we will focus on OEE as a \gls{kpi} as the main metric for this project.
+
+We can quantify the augmented capacity derived from an improvement in OEE as the reduced planned operating time of the line. In this work we will not be focused on improving sales directly, so the Total Number of units produced will be fixed. We wont focus on investing in new equipment, so the Nominal Speed of the line will stay constant. Every point of improvement of OEE will be inversely related to a decreased in the need for more planned time which in turns decreases the operating cost of labor of the line. Relating back to the objective function, equation \ref{Production_capacity_calc}.
+
 \clearpage
 \newpage
 \printbibliography[heading=bibnumbered]
