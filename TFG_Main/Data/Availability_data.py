@@ -1,4 +1,5 @@
 import matplotlib.pyplot as plt
+from matplotlib.ticker import PercentFormatter
 import pandas as pd
 import seaborn as sns
 import os
@@ -38,7 +39,7 @@ sns.lineplot(
     x="Activity type", y="Cumulative %", data=df,
     color="black", marker="o", linewidth=2, ax=ax1
 )
-
+ax1.yaxis.set_major_formatter(PercentFormatter())
 ax1.set_ylabel("% of Production Time", fontsize=12,fontweight='bold')
 ax1.set_xlabel("Activity Type", fontsize=12,fontweight='bold')
 ax1.tick_params(axis='x', rotation=0)
@@ -58,8 +59,8 @@ for p in barplot.patches:
     )
 
 # Titles and legend
-title='Pareto Chart of Activity Types'
-plt.title(title, fontsize=14, fontweight="bold")
+title='Pareto Chart of Available Time Expendeture'
+#plt.title(title, fontsize=14, fontweight="bold")
 ax1.legend(loc="best")
 
 plt.tight_layout()

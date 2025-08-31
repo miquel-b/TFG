@@ -360,28 +360,77 @@ We can quantify the augmented capacity derived from an improvement in OEE as the
 
 \subsection{Identifying improvement opportunities}
 
-As we have seen attacking the problem of OEE can be done from multiple angles. In our case the, after the \gls{vsa} we narrowed down the biggest opportunities.
-
-The project started on February. After one month of observation the baseline was:
+A comprehensive analysis of Overall Equipment Effectiveness (OEE) provides a structured approach to identifying production inefficiencies. Following a \gls{vsa}, our project focused on the key opportunities identified to improve OEE.
+The project's baseline OEE was established after one month of observation in February, with the following results:
 \begin{itemize}
-	\item Availability=41.3\%
+	\item Availability=41.6\%
 	\item Performance=66.2\%
 	\item Quality=99.89\%
-	\item OEE=27.3\%
+	\item OEE=27.5\%
 \end{itemize}
 
-We could clearly see that one of the main issues is that the line was not available for production.
-This lack of availability could be explained on the following premise explained in Figure \ref{fig:available_time_pareto_chart} as from all the available time only 40\% of it is used for production.
+The baseline data clearly indicates that low availability is the primary factor limiting overall equipment effectiveness. This is further explained in Figure \ref{fig:available_time_pareto_chart}, which shows that only 40\% of the available time is utilized for production.
 
-\begin{figure}[!h]
+\begin{figure}[!ht]
     \centering
-    \includegraphics[width=0.8\textwidth]{../Pictures/Pareto_Chart_of_Activity_Types.png}
+    \includegraphics[width=0.8\textwidth]{Pictures/Pareto_Chart_of_Available_Time_Expendeture.png}
     \caption{Pareto Chart of Available Production Time}
     \label{fig:available_time_pareto_chart}
 \end{figure}
 
+The main reason for this loss in availability is the time dedicated to cleaning all machine equipment and the production space. This extensive cleaning is a direct consequence of stringent quality controls within the pharmaceutical industry, which mandate:
+\begin{itemize}
+  \item The prevention of cross-contamination between different products or batches.
+  \item The removal of product from machinery overnight to prevent quality degradation.
+\end{itemize}
 
+Figure \ref{fig:availability_losses_pareto_chart}, provides a more detailed breakdown of the availability losses. By applying \gls{eightytwentyrule} we can focus on the key areas for improvement.
 
+\begin{figure}[!ht]
+    \centering
+    \includegraphics[width=0.8\textwidth]{Pictures/Pareto_Chart_of_Available_Time_Losses.png}
+    \caption{Pareto Chart of Main Losses on Availability. In Green Above 80\% of cumulated time, in Red the rest 20\% of time}
+    \label{fig:availability_losses_pareto_chart}
+  \end{figure}
+
+The analysis confirms that a significant efficiency improvement can be achieved by reducing the time spent on cleaning. This objective will be addressed using the \gls{SMED} Methodology.
+
+\subsection{Implementing the SMED Methodology}
+
+\subsubsection{Brief introduction to the SMED}
+The \gls{SMED} is a technique that helps us distinguish between Internal and External tasks as described in \citeauthor{dillon_revolution_1985} \cite{dillon_revolution_1985} book \citetitle{dillon_revolution_1985}. The core principle of the \gls{SMED} system is to significantly reduce the time required for machine changeovers. This is achieved by converting as many setup operations as possible from \textit{internal} tasks (which can only be performed when the machine is stopped) to \textit{external} tasks (which can be completed while the machine is still running). The goal is to make all changeovers last less than ten minutes, thereby maximizing production time and enabling smaller, more flexible batch sizes.
+
+This core principle of \textit{internal} vs \textit{external} tasks can be applied to multiple operations, not only limited to changeovers. In this case we will apply it to Cleanings. The basics steps described in \citeauthor{dillon_revolution_1985} book are as follows:
+
+\begin{enumerate}
+  \item Identify all tasks performed during the operation.
+  \item Identify all participants of the operation.
+  \item Distinguish between \textit{internal} and \textit{external} tasks.
+  \item Convert as much tasks from \textit{internal} to \textit{external}.
+  \item Distribute and balance internal tasks in order to minimize machine stopping time.
+  \item Standardize procedure, create checklists and \gls{OPL}. 
+  \item Measure progress and identify bottle necks.
+\end{enumerate}
+
+\subsubsection{Brief introduction to the SMED}
+The \gls{SMED} is a technique that helps us to significantly reduce the time required for machine changeovers and setups. Developed by Shigeo Shingo in the 1950s, the core principle is to convert as many setup operations as possible from \textit{internal} tasks (those that can only be performed when the machine is stopped) to \textit{external} tasks (those that can be completed while the machine is still running). The ultimate goal is to complete changeovers in less than ten minutes (a "single minute" in the literal sense of the word), thereby maximizing production time and enabling smaller, more flexible batch sizes.
+
+As detailed in Shingo's foundational book, \citetitle{dillon_revolution_1985} \cite{dillon_revolution_1985}, this methodology is not limited to product changeovers but can be applied to any process with internal and external tasks, such as the cleaning procedure we have identified. The SMED implementation process follows these distinct steps:
+
+\begin{enumerate}
+    \item \textbf{Preliminary Stage}: Identify and analyze the current setup or cleaning process. This involves documenting all tasks and their timings.
+    \item \textbf{Stage 1: Separate Internal and External Tasks}: Critically evaluate each step of the process and categorize it as either internal or external.
+    \item \textbf{Stage 2: Convert Internal to External Tasks}: This is the most crucial phase. Brainstorm and implement changes that allow internal tasks to be performed while the machine is running. For example, blowing off compressed air while the line is up.
+    \item \textbf{Stage 3: Streamline All Remaining Tasks}: Once the conversion is complete, focus on improving the efficiency of the remaining internal and external tasks. This involves using tools like checklists, visual aids, and improved tool organization. For instance, using quick-release clamps instead of bolts.
+    \item \textbf{Sustain and Standardize}: Create and maintain standardized work instructions, checklists and \gls{OPL}s to lock in the improvements. Establish a system for measuring and tracking progress to identify future opportunities.
+\end{enumerate}
+This structured approach ensures a systematic and measurable reduction in changeover or cleaning time, which directly increases equipment availability.
+
+\subsubsection{Documentation of tasks and timings}
+
+The first preeliminary step is to identify the task being performed by the operators and it's timings. 
+
+A reduce list of this tasks is presented in the next table. But the original list can be found in the appendixes.
 
 \clearpage
 \newpage
