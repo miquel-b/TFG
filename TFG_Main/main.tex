@@ -11,12 +11,12 @@
 \usepackage{listings}
 \usepackage{enumitem}
 \usepackage{pdfpages}
+\usepackage[toc,page]{appendix}
 \usepackage[backend=biber,citestyle=chem-acs]{biblatex}
-%\usepackage{biblatex}
 \addbibresource{TFG.bib}
-%\bibliography{TFG}
-%\bibliography{MemoriaPractiques}
 \usepackage{setspace}
+\usepackage{booktabs}
+\usepackage{tabularx}
 \usepackage{rotating}
 \usepackage{amsmath}
 \usepackage{cancel}
@@ -420,19 +420,81 @@ As detailed in Shingo's foundational book, \citetitle{dillon_revolution_1985} \c
 \begin{enumerate}
     \item \textbf{Preliminary Stage}: Identify and analyze the current setup or cleaning process. This involves documenting all tasks and their timings.
     \item \textbf{Stage 1: Separate Internal and External Tasks}: Critically evaluate each step of the process and categorize it as either internal or external.
-    \item \textbf{Stage 2: Convert Internal to External Tasks}: This is the most crucial phase. Brainstorm and implement changes that allow internal tasks to be performed while the machine is running. For example, blowing off compressed air while the line is up.
+    \item \textbf{Stage 2: Convert Internal from External Tasks}: This is the most crucial phase. Brainstorm and implement changes that allow internal tasks to be performed while the machine is running. For example, blowing off compressed air while the line is up.
     \item \textbf{Stage 3: Streamline All Remaining Tasks}: Once the conversion is complete, focus on improving the efficiency of the remaining internal and external tasks. This involves using tools like checklists, visual aids, and improved tool organization. For instance, using quick-release clamps instead of bolts.
     \item \textbf{Sustain and Standardize}: Create and maintain standardized work instructions, checklists and \gls{OPL}s to lock in the improvements. Establish a system for measuring and tracking progress to identify future opportunities.
 \end{enumerate}
 This structured approach ensures a systematic and measurable reduction in changeover or cleaning time, which directly increases equipment availability.
 
-\subsubsection{Documentation of tasks and timings}
+\subsubsection{Documentation of Tasks and Timings}
 
-The first preeliminary step is to identify the task being performed by the operators and it's timings. 
+The first preliminary step of the \gls{SMED} methodology is to conduct a thorough analysis of the existing changeover process to establish a baseline. This was achieved through direct observation and detailed time studies, utilizing video analysis to capture every task performed by the operators and the shift leader inputs to calculate their precise timings. This meticulous documentation serves to eliminate assumptions and reveal previously unnoticed process inefficiencies. A summary of the identified tasks is presented in Table \ref{tbl:SMED_Tasks}, while the complete, detailed list can be found in the Appendix \ref{apx:SMED_details}.
 
-A reduce list of this tasks is presented in the next table. But the original list can be found in the appendixes.
+\input{Data/SMED_tasks_table_short.tex}
+
+\subsubsection{Separating Internal from External Tasks}
+
+With a comprehensive understanding of the current state, the team's focus shifted to categorizing each task. Through collaborative workshops and direct consultation with the operators we classified each task as either \textit{internal} or \textit{external}. This classification was visually represented in an \textit{E-I} chart, which laid the foundation for the subsequent conversion efforts. The resulting categorization is presented in Table \ref{tbl:SMED_Internal_External}.
+
+\input{Data/SMED_task_Internal_External.tex}
+
+This analysis revealed a significant opportunity for improvement. The total calculated internal time needed was a maximum of \textbf{3h 18min}, within a total cleaning time baseline of \textbf{5h 5min}. This gap represented the potential for substantial time savings. A visual representation of all operations and their timings is presented in the Appendix \ref{apx:SMED_details}, Figure \ref{fig:gantt_smed}.
+
+\subsubsection{Standardizing the New Procedure}
+
+To lock in the improvements and ensure their sustainability, a new standard operating procedure was developed. This was not merely a document but a comprehensive set of visual tools created in close collaboration with the operators. Every step was detailed in a clear checklist to provide a quick visual reference for the entire process.
+
+The new procedure was treated as a living document. Any deviation from the objective time was immediately treated as a problem to be solved. This triggered a deviation where the shift leader and team would analyze the root cause of the delay, identify a countermeasure, and update the standard procedure to prevent the issue from reoccurring. This feedback loop ensured continuous improvement and maintained the gains achieved through the SMED effort.
+
+Also the new checklist of operation added the differentiation between internal and external task, to make sure the machine availability would be hindered as less as possible form the cleaning procedure.
+
+An example of the checklist used can be found in the Appendix \ref{apx:SMED_details} on Figure \ref{fig:checklist_smed}.
+
+\subsubsection{Results and Process Evolution}
+
+The baseline data, collected during my observations in February 2025, established the average time for the Jars line cleaning procedure at \textbf{5 hours and 5 minutes}. This total time was composed of \textbf{3 hours and 18 minutes} of internal operations (performed with the line stopped) and \textbf{1 hour and 47 minutes} of external operations that were also conducted during downtime.
+
+Based on this analysis, a two-pronged strategic goal was established. The first and most immediate objective was to convert the \textbf{1 hour and 47 minutes} of external operations, which were previously performed with the machine off, to be conducted in parallel with production or during the preparation phase. This would immediately reduce machine downtime from 5 hours and 5 minutes to a maximum of 3 hours and 18 minutes, matching the internal operation time. The second objective, informed by the \gls{vsa} analysis, was to systematically reduce the remaining internal time by a third, setting an ambitious final target of \textbf{2 hours and 15 minutes} for the entire cleaning procedure.
+
+The evolution of the cleaning process time is visually documented in Figure \ref{fig:Evolution_cleaning_weeks}, which tracks the procedure's duration over several weeks.
+
+\begin{figure}[h]
+\centering
+\includegraphics[width=\textwidth]{Pictures/Evolution_of_cleaning_time_along_the_weeks.png}
+\caption{Evolution of the Cleaning Time Procedure along the Weeks.}
+\label{fig:Evolution_cleaning_weeks}
+\end{figure}
+
+The data reveals a clear and immediate reduction in downtime following the introduction of the new Standard Operating Procedure and the strategic conversion of external tasks. Machine inactivity levels dropped drastically, reflecting the direct impact of the \gls{SMED} methodology. The figure also demonstrates a clear downward trend in cleaning time over the subsequent months, indicating a culture of continuous improvement and effective knowledge sharing among the operators. This sustained improvement is a powerful testament to the successful application of \gls{kaizen} principles beyond the initial project scope.
+
+A good example of this came in week 24, when we introduced a new, new, high-viscosity product tha disrupted established processes. At first, the adhesive characteristics proposed an unexpected challenge threatening the steady progress on the adaptation of the new standard. However, the team quickly used the standard procedure and checklist as a guide to break the problem down and adjust on the fly. Operators worked together to test ideas, tweak tools and cleaning products. Settling on a better method. By the next week, they had updated the standard and were back on track with our time targets. This showed just how adaptable the team had become and how a strong Kaizen culture helps us solve problems quickly and lock in improvements.
+
+
+As a conclusion, from the first observation of a Cleaning machine downtime of \textbf{5h 5min} to the final observation right before summer break of \textbf{1h 36min} there is an improvement of \textbf{68\%} reduction on machine downtime during Cleaning procedures.
+
 
 \clearpage
 \newpage
 \printbibliography[heading=bibnumbered]
+\newpage
+\begin{appendices}
+  \section{SMED Task Detail}\label{apx:SMED_details}
+  \input{Data/SMED_tasks_table.tex}
+\end{appendices}
+
+
+\begin{figure}[ht]
+\centering
+\includegraphics[width=1.1\textwidth]{Data/SMED_cleaning_gantt.pdf}
+\caption{Gantt Diagram of Cleaning Procedure}
+\label{fig:gantt_smed}
+\end{figure}
+
+\begin{figure}[ht]
+\centering
+\includegraphics[width=\textwidth]{Data/Checklist_SMED.pdf}
+\caption{Standard Procedure Checklist Example}
+\label{fig:checklist_smed}
+\end{figure}
+
 \end{document}
