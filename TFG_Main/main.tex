@@ -268,16 +268,16 @@ Each \gls{kaizen} Event will be:
 \section{Improvement of Line Efficiency}\label{OEE_improve}
 \subsection{Objective Function}
 As in any optimization problem, we must first define the objective function. 
-In the \gls{kaizen} methodology, improvement efforts are directed toward what is most valuable for the client, often summarized by the principles of GQCDM:
- \begin{itemize}
-   \item Growth
-   \item Quality
-   \item Cost
-   \item Delivery
-   \item Motivation
- \end{itemize}
- 
-In this particular \gls{kaizen} event, the focus will be on minimizing production cost. 
+In the \gls{kaizen} methodology, improvement efforts are directed toward what is most valuable for the client, often summarized by the principles of \gls{gqcdm}:
+  \begin{itemize}
+    \item \textbf{Growth}: Focus on expanding market share, innovation, and business development.
+    \item \textbf{Quality}: Ensuring high standards in products, processes, and customer satisfaction.
+    \item \textbf{Cost}: Controlling expenses and improving efficiency to remain competitive.
+    \item \textbf{Delivery}: Meeting deadlines and ensuring timely, reliable delivery of products or services.
+    \item \textbf{Motivation}: Encouraging and empowering employees to foster engagement, productivity, and innovation.
+  \end{itemize}
+
+  In this particular \gls{kaizen} event, the focus will be on minimizing \textbf{Production Cost}. 
 Specifically, this is pursued by maximizing the sustainable production capacity of the line.
 
 \begin{equation}\label{Production_capacity_calc}
@@ -288,7 +288,7 @@ In other words, equation \ref{Production_capacity_calc} seeks to maximize the th
 
 This can also be expressed as:
 \begin{equation}\label{eq:production_capacity_calc_OEE}
-   \text{Objective function} = \max \left( \text{Rated line speed} \times OEE \right)
+   \text{Objective function} = \max \left( \text{Rated line speed} \cdot OEE \right)
 \end{equation}
 
 Here, the rated line speed represents the theoretical design capacity, while $OEE$ adjusts for availability, performance, and quality losses. 
@@ -318,7 +318,7 @@ during production. It captures losses due to reduced speed or minor stoppages th
 halt production but reduce efficiency.\cite{calandreli_maximizing_2025}
 
 \begin{equation}\label{eq:performance}
-  \mu = \frac{\text{Actual Units Produced (units)}}{\text{Operating Time (h)} \times \text{Nominal Speed (units/h)}}
+  \mu = \frac{\text{Actual Units Produced (units)}}{\text{Operating Time (h)} \cdot \text{Nominal Speed (units/h)}}
 \end{equation}
 
 \subsubsection{Quality}\label{quality}
@@ -332,7 +332,7 @@ Quality assesses the proportion of defect-free products produced relative to the
 By combining these three components, we get the final OEE formula, which shows the overall efficiency of the production line.
 
 \begin{equation}\label{OEE_calc}
-  OEE=A*\mu*Q
+  OEE=A \cdot \mu \cdot Q
 \end{equation}
 
 An OEE score of 100\% represents perfect equipment effectiveness, with no downtime, optimal
@@ -342,14 +342,14 @@ Or in fair terms:
 
 \begin{equation}\label{OEE_calc_cancel_termns}
   \begin{split}
-    OEE = \frac{\cancel{\text{Operating Time (h)}}}{\text{Planned Time (h)}} \times \frac{\cancel{\text{Actual Units Produced (units)}}}{\cancel{\text{Operating Time (h)}} \times \text{Nominal Speed (units/h)}} \times \\
-    \times \frac{\text{Total OK unit output (units)}}{\cancel{\text{Actual Units Produced (units)}}}=\frac{\text{Total OK unit output (units)}}{\text{Planned Time (h)} \times \text{Nominal Speed (units/h)}}
+    OEE = \frac{\cancel{\text{Operating Time (h)}}}{\text{Planned Time (h)}} \cdot \frac{\cancel{\text{Actual Units Produced (units)}}}{\cancel{\text{Operating Time (h)}} \cdot \text{Nominal Speed (units/h)}} \cdot \\
+    \cdot \frac{\text{Total OK unit output (units)}}{\cancel{\text{Actual Units Produced (units)}}}=\frac{\text{Total OK unit output (units)}}{\text{Planned Time (h)} \cdot \text{Nominal Speed (units/h)}}
 \end{split}
 \end{equation}
 
 \begin{small}
 \begin{equation}\label{OEE_calc_extended}
-  OEE=A*\mu*Q=\frac{\text{Total OK unit output (units)}}{\text{Planned Time (h)} \times \text{Nominal Speed (units/h)}}
+  OEE=A \cdot \mu \cdot Q=\frac{\text{Total OK unit output (units)}}{\text{Planned Time (h)} \cdot \text{Nominal Speed (units/h)}}
 \end{equation}
 \end{small}
 
@@ -374,7 +374,7 @@ The baseline data clearly indicates that low availability is the primary factor 
 \begin{figure}[!ht]
     \centering
     \includegraphics[width=0.8\textwidth]{Pictures/Pareto_Chart_of_Available_Time_Expendeture.png}
-    \caption{Pareto Chart of Available Production Time}
+    \caption{Pareto Chart of Planned Time dedication by Activity}
     \label{fig:available_time_pareto_chart}
 \end{figure}
 
@@ -471,6 +471,63 @@ A good example of this came in week 24, when we introduced a new, new, high-visc
 
 
 As a conclusion, from the first observation of a Cleaning machine downtime of \textbf{5h 5min} to the final observation right before summer break of \textbf{1h 36min} there is an improvement of \textbf{68\%} reduction on machine downtime during Cleaning procedures.
+
+\section{Improving Line Productivity}
+\subsection{Objective Function}
+This \gls{kaizen} event is grounded in \gls{gqcdm} principles, with a primary focus on enhancing line productivity through the optimal allocation of human resources necessary to complete a production batch. The analytical perspective shifts from traditional machine efficiency metrics to the evaluation of human time investment, identifying labor allocation as a critical lever for productivity improvement.
+
+The objective function for this Kaizen event is formally defined as the maximization of productivity, as expressed by the following equation:
+
+\begin{equation}\label{eq:Objective_Function_Productivity}
+\text{Objective Function} =
+\max\left(\text{Productivity}\right)
+= \max\left(
+\frac{\text{Unit output (units)}}
+{T_{\text{operation}} , (\mathrm{h}) \cdot N_{\text{operators}}}
+\right)
+\end{equation}
+Where:
+\begin{itemize}
+  \item $Unit\ output$: Represents the total number of units produced within a defined production batch.
+  \item $T_{operation}$: Denotes the total person-hours invested in production, expressed as the sum of all operator working hours.
+  \item $N_{operators}$: Refers to the number of operators assigned to the production line.
+\end{itemize}
+
+Maximizing productivity, as defined by this function, inherently targets production cost reduction. By producing the greatest unit output for the minimum operator time, the event directly aligns with Kaizen principles of waste elimination and resource optimization, as each operator-hour represents a significant and reducible cost.
+
+\subsection{Productivity and profits calculation method}
+\subsubsection{Productivity}
+
+For this study, productivity will be calculated using Equation \ref{eq:Objective_Function_Productivity}. Because products produced on the same line may exhibit different standard line speeds, this factor is incorporated to enable fair comparisons across different product types. For the remainder of the analysis, we refer to productivity improvements as $\Delta \text{Productivity}$.
+Measured relative to the previous standard as described in \citeauthor{townsend_basics_2012}'s book \citetitle{townsend_basics_2012} \cite{townsend_basics_2012}.
+
+
+\begin{equation}
+  \Delta \text{Productivity} (\mathrm{\%}) 
+=
+\frac{
+  \left(\dfrac{\text{Unit Output}_{1}}{T_{\mathrm{operation},1} \cdot N_{\mathrm{operators},1}}\right)
+}{
+  \left(\dfrac{\text{Unit Output}_{0}}{T_{\mathrm{operation},0} \cdot N_{\mathrm{operators},0}}\right)
+}
+-1
+\end{equation}
+
+Here, the subscript 0 refers to the baseline or historical production values, while subscript 1 corresponds to the post line-balancing measurements.
+
+\subsubsection{Profit Calculation}
+
+In alignment with $OEE$ profit analysis, each incremental gain in productivity is translated directly into cost savings by reducing the total operation time required to produce the same number of units. This approach establishes a direct quantitative link between productivity improvements and financial performance, consistent with Lean Kaizen principles of continuous improvement and cost efficiency.
+
+
+\subsubsection{A Brief Description on Line Balancing and Yamazumi}
+The foundational principle of line balancing was applied to the production process with the primary objective of distributing tasks equally among operators. This approach aimed to eliminate bottlenecks and minimize idle time, thereby optimizing workflow. The key analytical tool used for this work was the Yamazumi chart. This visual method, which literally translates to "to pile up," provided a graphical representation of each operator's work content and the time required for their individual tasks. By visualizing the cumulative workload for all team members, the Yamazumi chart immediately highlighted the imbalances and bottlenecks that were impeding the process. This visual data was critical for identifying and eliminating the forms of waste known as muda, mura, and muri—specifically, the waste of waiting, unevenness, and overburden—that were inherent in the unbalanced line. Through the strategic use of the Yamazumi chart, tasks were redistributed to create a smoother, more efficient, and balanced workflow, which directly contributed to the overall objective of maximizing productivity.
+
+In conjunction with line balancing, the \textit{Takt Time} is a critical metric for determining the required pace of production to meet customer demand. It serves as a heartbeat for the production process, establishing a baseline against which the balanced line's performance can be measured. The formula for calculating Takt Time is defined as (\ref{eq:Takt_Time}):
+
+\begin{equation}\label{eq:Takt_Time}
+\text{Takt Time} = \frac{\text{Total Available Production Time}}{\text{Customer Demand}}
+\end{equation}
 
 
 \clearpage

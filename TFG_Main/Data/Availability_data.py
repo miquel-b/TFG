@@ -40,7 +40,7 @@ sns.lineplot(
     color="black", marker="o", linewidth=2, ax=ax1
 )
 ax1.yaxis.set_major_formatter(PercentFormatter())
-ax1.set_ylabel("% of Production Time", fontsize=12,fontweight='bold')
+ax1.set_ylabel("% of Planned Time", fontsize=12,fontweight='bold')
 ax1.set_xlabel("Activity Type", fontsize=12,fontweight='bold')
 ax1.tick_params(axis='x', rotation=0)
 
