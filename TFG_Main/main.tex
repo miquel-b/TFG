@@ -529,6 +529,56 @@ In conjunction with line balancing, the \textit{Takt Time} is a critical metric 
 \text{Takt Time} = \frac{\text{Total Available Production Time}}{\text{Customer Demand}}
 \end{equation}
 
+The \textit{Takt Time} will be used to determine the number of operators needed on the line in order to cover customer demand.
+As an example let's look onto the planned production for one shift. Let's say it is 26,400 units that must be covered in one shift of 7.33h. In this case following equation \ref{eq:Takt_Time}, the \textit{Takt Time} must be:
+
+\begin{equation}\label{eq:Takt_Time_example}
+  \text{Takt Time} = \frac{7,33 h \cdot \frac{3,600 s}{1 h}}{26,400 units} = 0.99 units / s 
+\end{equation}
+Meaning that the line should be averaging a production of roughly 1 unit per second.
+
+\subsubsection{Initial Line distribution}
+
+As stated in previous sections, the pilot line for this endeavour was the "Liquids" Line of the plant. In this line drugs sold and administered in liquid form are bottled, boxed, added with the dosification device necessary, packed into distribution boxes and palletized ready for shipment. 
+
+It is divided onto 2 main section, the primary section, and the secondary. In the pharmaceutical industry, the primary section is where the product is treated outside of its shipping container, in this case its where the liquid medicine comes out from the reactor into the bottler. The primary section is regulated under heavier security measures as the product is in contact with the environment at it is more likely to be contaminated. The secondary section is where the conditioning of the bottle takes place, this is the labelling, boxing, prospect insertion, dosser insertion, and further transformation occurs. As the product is already bottled up and has no interaction with the environment the regulations are much looser. The two sections are physically separated by a positive pressure wall and to access the primary one must change his attire into a more restricted one which in turn difficult the movement between the two sections.
+
+As depicted in the line schematics, one person must reside at all times in the primary section and as movement between the two section is heavily restricted the focus of this project will be put specially on the secondary section of the line, as not only it host the most amount of resources it is where the majority of the transformation takes place.
+
+As shown in Figure \ref{fig:Line_distribution_before} the line hosted 2 operators and 1 line coordinator. 
+\begin{figure}[!ht]
+    \centering
+    \includegraphics[width=0.8\textwidth]{Pictures/Line_Distribution_before.png}
+    \caption{Line Diagram of Operator distribution}
+    \label{fig:Line_distribution_before}
+\end{figure}
+
+After an initial observation round. Every task done by each operator during the shift was recorded, classified and inspected. The table showing details can be found in the Appendix \ref{apx:Line_Details} Table \ref{tab:line_tasks_before}.
+
+The line \textit{Takt Time} was calculated to 2.8s. The Yamazumi chart in figure \ref{fig:Yamazumi_before} shows task distribution between operators. It is clear that operator occupation is not maximized. This chart shows us that the need for 3 operators in the line is not due to high occupation and line tasks but rather due to a lack of time organization and task sequencing. 
+
+\begin{figure}[!ht]
+    \centering
+    \includegraphics[width=0.8\textwidth]{Pictures/yamazumi_chart_before_kaizen.png}
+    \caption{Yamazumi Chart Showing Task distribution before improvement.}
+    \label{fig:Yamazumi_before}
+  \end{figure}
+
+\subsubsection{Line Balancing}
+The main problem was indeed time organization. Some operations had to be performed simultaneously. Like quality checks, reloading leaflets or cases. Changing the optics from the operations, it was noticed that the bottle neck of the line did not come from the secondary section but rather how fast the primary bottling would go. So it would be not a problem to speed up the secondary cycle time and have some slack to stop the line for a few minutes in order to conduct some of this tasks, like quality controls, loading of leaflets, changing labels, change cases, etc. Meanwhile build up a buffer in the line and systematically clear it up. Maintaining this way the average line \textit{Takt Time}.
+
+Organizing the time in this matter and reducing the Non-added Value activities as much as possible, the line tasks where reorganized to fit only 2 operators. 
+
+The new Yamazumi chart with only 2 operators is shown in Figure \ref{Yamazumi_after}.
+
+\begin{figure}[!ht]
+    \centering
+    \includegraphics[width=0.8\textwidth]{Pictures/yamazumi_chart_after_kaizen.png}
+    \caption{Yamazumi Chart Showing Task distribution with 2 operators.}
+    \label{fig:Yamazumi_after}
+\end{figure}
+
+
 
 \clearpage
 \newpage
@@ -537,21 +587,24 @@ In conjunction with line balancing, the \textit{Takt Time} is a critical metric 
 \begin{appendices}
   \section{SMED Task Detail}\label{apx:SMED_details}
   \input{Data/SMED_tasks_table.tex}
-\end{appendices}
 
 
-\begin{figure}[ht]
+\begin{figure}[!ht]
 \centering
 \includegraphics[width=1.1\textwidth]{Data/SMED_cleaning_gantt.pdf}
 \caption{Gantt Diagram of Cleaning Procedure}
 \label{fig:gantt_smed}
 \end{figure}
 
-\begin{figure}[ht]
+\begin{figure}[!ht]
 \centering
 \includegraphics[width=\textwidth]{Data/Checklist_SMED.pdf}
 \caption{Standard Procedure Checklist Example}
 \label{fig:checklist_smed}
 \end{figure}
+
+\section{Line Balancing Details}\label{apx:Line_Details}
+\input{Data/Line_Tasks_Before.tex}  % includes the CSV as a table
+\end{appendices}
 
 \end{document}

@@ -1,0 +1,20 @@
+﻿Tasks;Time (s);Frequency (1/s);MUDA/VA;Operator
+Change dispenser box;50;0.001;VA;OP 1
+Change case box;50;0.0004;VA;OP 2
+Change leaflet box;50;0.0004;VA;LINE COORDINATOR
+Change label;70;0.0005;VA;LINE COORDINATOR
+Load cases;20;0.004;VA;LINE COORDINATOR
+Load leaflets;40;0.004;VA;LINE COORDINATOR
+Check machine parameters;10;0.0002;MUDA;LINE COORDINATOR
+Case quality control;20;0.00222222222222222;VA;LINE COORDINATOR
+Record quality control result;45;0.00222222222222222;MUDA;LINE COORDINATOR
+Monitor rejection 2;10;0.02;VA;OP 2
+Discard boxes;84;0.0012;VA;OP 2
+Perform label rejection control (Rejection 1);20;0.01;VA;LINE COORDINATOR
+Pallet shipment;180;0.00078125;VA;OP 2
+Push bottles onto the cartoner conveyor;30;0.001;MUDA;OP 2
+Place dispenser in case;0.75;1;VA;OP 1
+Label box;1.5;0.2;VA;OP 2
+Place cases into boxes (5 at a time);1;0.2;VA;OP 2
+Palletize;1;0.2;VA;OP 2
+Make box;2;0.2;VA;OP 2

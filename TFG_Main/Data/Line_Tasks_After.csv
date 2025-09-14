@@ -1,0 +1,17 @@
+﻿Task;Time (s);Frequency (1/s);Unitary Time (s);% alpha;Time dedication by alpha;OP alpha;uts / h alpha;% beta;Time dedication by beta;OP beta;uts / h beta;VA/MUDA
+Change dispenser box;50;0,001;0,05;1;0,05;OP1;2,414896333;0;0;OP2;0;VA
+Change case box;50;0,0004;0,02;0,5;0,01;OP1;0,482979267;0,5;0,01;OP2;0,482979267;VA
+Change leaflet box;50;0,0004;0,02;0,5;0,01;OP1;0,482979267;0,5;0,01;OP2;0,482979267;VA
+Change label;70;0,0005;0,035;0,5;0,0175;OP1;0,603724083;0,5;0,0175;OP2;0,603724083;VA
+Load cases;20;0,004;0,08;0,25;0,02;OP1;2,414896333;0,75;0,06;OP2;7,244688998;VA
+Load leaflets;40;0,004;0,16;0,5;0,08;OP1;4,829792665;0,5;0,08;OP2;4,829792665;VA
+Case quality control;20;0,002222222;0,044444444;0,5;0,022222222;OP1;2,683218147;0,5;0,022222222;OP2;2,683218147;VA
+Monitor rejection 2;10;0,02;0,2;1;0,2;OP1;48,29792665;0;0;OP2;0;VA
+Discard boxes;84;0,0012;0,1008;0,5;0,0504;OP1;1,4489378;0,5;0,0504;OP2;1,4489378;VA
+Perform label rejection control (Rejection 1);20;0,01;0,2;1;0,2;OP1;24,14896333;0;0;OP2;0;VA
+Pallet shipment;180;0,00078125;0,140625;1;0,140625;OP2;1,88663776;0;0;OP1;0;VA
+Place dispenser in case;0,75;1;0,75;1;0,75;OP1;2414,896333;0;0;OP2;0;VA
+Label box;1,5;0,2;0,3;1;0,3;OP2;482,9792665;0;0;OP1;0;VA
+Place cases into boxes (5 at a time);1;0,2;0,2;1;0,2;OP2;482,9792665;0;0;OP1;0;VA
+Palletize;1;0,2;0,2;1;0,2;OP2;482,9792665;0;0;OP1;0;VA
+Make box;2;0,2;0,4;1;0,4;OP2;482,9792665;0;0;OP1;0;VA
