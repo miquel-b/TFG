@@ -4,6 +4,8 @@
 \usepackage{csquotes}
 \usepackage{graphicx} % Imatges
 \usepackage{fancyhdr}
+\usepackage{eurosym}
+\usepackage{textcomp}
 \usepackage{ragged2e}
 \usepackage{hyperref}
 \usepackage{textcomp}
@@ -252,6 +254,7 @@ Each \gls{kaizen} Event will be:
   \item Improvement of Line Efficiency.
     \subitem Pilot: "Jars" Line
     \subitem \gls{kpi}: Line OEE
+    \subitem Goal: 40\% OEE
   \item Improvement of line Productivity
     \subitem Pilot: "Liquids" Line
     \subitem \gls{kpi}: Line Productivity
@@ -353,7 +356,7 @@ Or in fair terms:
 \end{equation}
 \end{small}
 
-\subsubsection{Profit Calculation}
+\subsubsection{Profit Calculation}\label{OEE_profit_calc}
 Now that the concept of $OEE$ is clear we could go back to equation \ref{eq:production_capacity_calc_OEE}. In \gls{kaizen} philosophy we focus on the non investment improvements. As we can infer changing the Nominal Speed of a line or machine could mean investing a huge amount of money in technology, instead of focusing on eliminating \gls{muda}. That's why we will focus on OEE as a \gls{kpi} as the main metric for this project.
 
 We can quantify the augmented capacity derived from an improvement in OEE as the reduced planned operating time of the line. In this work we will not be focused on improving sales directly, so the Total Number of units produced will be fixed. We will not focus on investing in new equipment, so the Nominal Speed of the line will stay constant. Every point of improvement of OEE will be inversely related to a decreased in the need for more planned time which in turns decreases the operating cost of labor of the line. Relating back to the objective function, equation \ref{Production_capacity_calc}.
@@ -588,6 +591,53 @@ Coming back to equation \ref{eq:delta_productivity} where we described the metho
 \end{equation}
 
 Meaning a direct increase in productivity of \textbf{33\%}.
+
+\section{Results}
+
+\subsection{Improvement on line efficiency}
+\subsubsection{OEE Improvement}
+In the project described on section \ref{OEE_improve} the main \gls{kpi} for that project was \textbf{OEE}. In Figure \ref{fig:Evolution_cleaning_weeks} a clear downwards trend on cleaning time was observed. In fact a total reduction of over 66\% of cleaning time. 
+
+This reduction of cleaning time impacted directly to the OEE by means of the Availability metric. In the Figure \ref{fig:evolution_oee} the evolution of the OEE within the weeks is depicted.
+
+\begin{figure}[ht]
+\centering
+\includegraphics[width=\textwidth]{Pictures/Evolution_of_OEE_along_the_weeks.png}
+\caption{Evolution of OEE along the weeks}
+\label{fig:evolution_oee}
+\end{figure}
+
+As it is shown the improved trend for the OEE is clear. From a Baseline recorded the first 5 Weeks of an average of 28.3\% to an average the last month of recorded data of 52.9\% a 14 point improvement in OEE metrics. 
+
+\subsubsection{Production Capacity Improvement}
+
+As explained in section \ref{OEE_profit_calc} combining Equation \ref{Production_capacity_calc} and \ref{eq:production_capacity_calc_OEE} get's us the following notation:
+
+\begin{equation}
+  \text{Production Capacity}_{0}
+    = \frac{\text{Total Output Units}}{\text{Time Window}_{0}}
+    = \text{Line Rated Speed} \cdot \text{OEE}_{0}
+  \end{equation}
+  \begin{equation}
+  \text{Production Capacity}_{1}
+    = \frac{\text{Total Output Units}}{\text{Time Window}_{1}}
+    = \text{Line Rated Speed} \cdot \text{OEE}_{1}
+\end{equation}
+As Total Output units and Line Rated Speed remain a constant and for the profit calculation method the $\text{Time Window}_{0}$ will be the entire production year, 218 days or 3,488 available hours.
+
+\begin{equation}
+  \text{Time Window}_{1}=\frac{\text{OEE}_{0} \cdot \text{Time Window}_{0}}{\text{OEE}_{1}}=\frac{28.3\% \cdot 3,488h}{52.9\%}=1,866h
+\end{equation}
+
+Meaning that the same production output can be achieved in almost half the time. This reduction of the 46\% of the necessary production time.
+
+The line currently employs 4 operators per shift, running 2 full shifts 5 days a week.
+By reducing the production time from 3,488 hours/year to 1,866 hours/year we are saving 6,488 hours/year of direct operator working time.
+
+The current hourly rate for a pharmaceutical operator in Spain is approximately 16.4\euro~before taxes \cite{ccoo_convenio_nodate}.
+
+A total savings of 6,488 operator hours a year represents a total savings amount of \textbf{106,400\euro} saved in direct labor work.
+
 
 
 
