@@ -159,7 +159,7 @@ to catch up with America to assure the survival of the automobile industry of Ja
 Toyota’s engineer, had a challenge: how to build a diversified line of products with the limited
 equipment Toyota possessed at the time. Instead of using batch production, he designed a system
 of integrated production that used one-piece flow, demonstrating that a trade-off between quality
-and productivity does not need to exist (Netland and Powell, 2016). Aligned with other practices,
+and productivity does not need to exist \cite{netland_routledge_2016}. Aligned with other practices,
 Toyota Production System (\gls{tps}) was born to defy the premise that bigger batches mean lower
 costs.
 
@@ -173,12 +173,12 @@ With this prevention mechanism, defective products were not produced. That was n
 advantage. While the machine is working properly, employees are liberated. Consequently, one
 worker could attend multiple machines, increasing production efficiency. Furthermore, autonoma-
 tion came as a facilitator of improvement. Stopping the machine creates awareness and, through
-the total comprehension of the problem, improvement measures can be taken. (Ohno, 1988)
+the total comprehension of the problem, improvement measures can be taken \cite{ohno_toyota_1988}.
 \gls{lean}, based on \gls{tps}, is a methodology that accentuates customer needs, to improve quality
-and reduce costs through continuous improvement and employee involvement (Graban, 2008).
+and reduce costs through continuous improvement and employee involvement \cite{graban_lean_2011}.
 \gls{kaizen}, a Japanese word, refers to the concept of continuous improvement. It does not intend
 to be mistaken as innovation or disruption and elevated costs. On the other hand, \gls{kaizen} is about
-small and subtle improvements. It is a low-cost low-risk process that assures incremental progress
+methodological improvements. It is a low-cost low-risk process that assures incremental progress
 and sustainable changes in the long term.
 
 At the beginning of the 21st century, Toyota Motor Company surpassed General Motors and
@@ -201,7 +201,7 @@ possible, improving customer experience.
     to the product". Eliminating waste is the most effective way to increase productivity and
     decrease costs.
     Although \gls{muda} has gained bigger awareness, comprehending all three concepts allows for
-    a greater understanding of \gls{lean} (Netland and Powell, 2016). Mura is the variation in a
+    a greater understanding of \gls{lean} \cite{netland_routledge_2016}. Mura is the variation in a
     process that is not caused by the final customer, for example highs and lows in the planned
     production due to the production system or the irregular work rhythm. Leveling production
     using \gls{justintime} can eliminate this irregularities, avoiding work spikes and long waiting times for
@@ -356,7 +356,7 @@ Or in fair terms:
 \subsubsection{Profit Calculation}
 Now that the concept of $OEE$ is clear we could go back to equation \ref{eq:production_capacity_calc_OEE}. In \gls{kaizen} philosophy we focus on the non investment improvements. As we can infer changing the Nominal Speed of a line or machine could mean investing a huge amount of money in technology, instead of focusing on eliminating \gls{muda}. That's why we will focus on OEE as a \gls{kpi} as the main metric for this project.
 
-We can quantify the augmented capacity derived from an improvement in OEE as the reduced planned operating time of the line. In this work we will not be focused on improving sales directly, so the Total Number of units produced will be fixed. We wont focus on investing in new equipment, so the Nominal Speed of the line will stay constant. Every point of improvement of OEE will be inversely related to a decreased in the need for more planned time which in turns decreases the operating cost of labor of the line. Relating back to the objective function, equation \ref{Production_capacity_calc}.
+We can quantify the augmented capacity derived from an improvement in OEE as the reduced planned operating time of the line. In this work we will not be focused on improving sales directly, so the Total Number of units produced will be fixed. We will not focus on investing in new equipment, so the Nominal Speed of the line will stay constant. Every point of improvement of OEE will be inversely related to a decreased in the need for more planned time which in turns decreases the operating cost of labor of the line. Relating back to the objective function, equation \ref{Production_capacity_calc}.
 
 \subsection{Identifying improvement opportunities}
 
@@ -502,15 +502,14 @@ For this study, productivity will be calculated using Equation \ref{eq:Objective
 Measured relative to the previous standard as described in \citeauthor{townsend_basics_2012}'s book \citetitle{townsend_basics_2012} \cite{townsend_basics_2012}.
 
 
-\begin{equation}
+\begin{equation} \label{eq:delta_productivity}
   \Delta \text{Productivity} (\mathrm{\%}) 
-=
+=1-
 \frac{
   \left(\dfrac{\text{Unit Output}_{1}}{T_{\mathrm{operation},1} \cdot N_{\mathrm{operators},1}}\right)
 }{
   \left(\dfrac{\text{Unit Output}_{0}}{T_{\mathrm{operation},0} \cdot N_{\mathrm{operators},0}}\right)
 }
--1
 \end{equation}
 
 Here, the subscript 0 refers to the baseline or historical production values, while subscript 1 corresponds to the post line-balancing measurements.
@@ -569,7 +568,7 @@ The main problem was indeed time organization. Some operations had to be perform
 
 Organizing the time in this matter and reducing the Non-added Value activities as much as possible, the line tasks where reorganized to fit only 2 operators. 
 
-The new Yamazumi chart with only 2 operators is shown in Figure \ref{Yamazumi_after}.
+The new Yamazumi chart with only 2 operators is shown in Figure \ref{fig:Yamazumi_after}.
 
 \begin{figure}[!ht]
     \centering
@@ -577,6 +576,18 @@ The new Yamazumi chart with only 2 operators is shown in Figure \ref{Yamazumi_af
     \caption{Yamazumi Chart Showing Task distribution with 2 operators.}
     \label{fig:Yamazumi_after}
 \end{figure}
+
+In the end, the deliverable of this \gls{kaizen} Event is the generation of the General Standard of the Worker, which describes how the line should be operated with the planned resources. This Standard can be found in Appendix \textbf{??}
+
+\subsubsection{Results and Evaluation}
+
+Coming back to equation \ref{eq:delta_productivity} where we described the method for calculating the increment in productivity, here, as line \textit{Takt Time} and Unit Output stay the same we can simply calculate the $\Delta Productivity$ as:
+
+\begin{equation}
+  \Delta Productivity (\%) = 1-\frac{N_{operators,1}}{N_{operators,0}}=1-\frac{2}{3}=33\%
+\end{equation}
+
+Meaning a direct increase in productivity of \textbf{33\%}.
 
 
 
