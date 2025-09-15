@@ -475,7 +475,7 @@ A good example of this came in week 24, when we introduced a new, new, high-visc
 
 As a conclusion, from the first observation of a Cleaning machine downtime of \textbf{5h 5min} to the final observation right before summer break of \textbf{1h 36min} there is an improvement of \textbf{68\%} reduction on machine downtime during Cleaning procedures.
 
-\section{Improving Line Productivity}
+\section{Improving Line Productivity}\label{Productivity_improvement}
 \subsection{Objective Function}
 This \gls{kaizen} event is grounded in \gls{gqcdm} principles, with a primary focus on enhancing line productivity through the optimal allocation of human resources necessary to complete a production batch. The analytical perspective shifts from traditional machine efficiency metrics to the evaluation of human time investment, identifying labor allocation as a critical lever for productivity improvement.
 
@@ -507,12 +507,12 @@ Measured relative to the previous standard as described in \citeauthor{townsend_
 
 \begin{equation} \label{eq:delta_productivity}
   \Delta \text{Productivity} (\mathrm{\%}) 
-=1-
+=
 \frac{
-  \left(\dfrac{\text{Unit Output}_{1}}{T_{\mathrm{operation},1} \cdot N_{\mathrm{operators},1}}\right)
+  \left(\dfrac{\text{Actual Unit Output}}{\text{Planned Operation Time}_{1} \cdot \text{Actual N}_{\mathrm{operators},1}}\right)
 }{
-  \left(\dfrac{\text{Unit Output}_{0}}{T_{\mathrm{operation},0} \cdot N_{\mathrm{operators},0}}\right)
-}
+  \left(\dfrac{\text{Planned Unit Output}}{\text{Planned Operation Time}_{0} \cdot \text{Planned N}_{\mathrm{operators},0}}\right)
+}-1
 \end{equation}
 
 Here, the subscript 0 refers to the baseline or historical production values, while subscript 1 corresponds to the post line-balancing measurements.
@@ -584,13 +584,27 @@ In the end, the deliverable of this \gls{kaizen} Event is the generation of the 
 
 \subsubsection{Results and Evaluation}
 
-Coming back to equation \ref{eq:delta_productivity} where we described the method for calculating the increment in productivity, here, as line \textit{Takt Time} and Unit Output stay the same we can simply calculate the $\Delta Productivity$ as:
+Coming back to equation \ref{eq:delta_productivity} where we described the method for calculating the increment in productivity, here, as line \textit{Takt Time} and Unit Output stay the same we can simply calculate the theoretical gain on $\Delta Productivity$ as:
 
 \begin{equation}
   \Delta Productivity (\%) = 1-\frac{N_{operators,1}}{N_{operators,0}}=1-\frac{2}{3}=33\%
 \end{equation}
 
-Meaning a direct increase in productivity of \textbf{33\%}.
+Meaning a direct increase in productivity expected should be of \textbf{33\%}.
+
+However in practice a reduced line efficiency was observed. The operators could not keep up with the tasks at hand. 
+This placed the challenge to modify the current line pace. After careful analysis it was concluded that the bottle neck for the line came from the bottling rate in the primary section. Which meant that the main secondary machine, the leaflet placer could be stopped at times and then sped up systematically in order to catch up to the primary production without ever compromising the line bottle neck. This method will be address as \textit{Buffering} from now on, as it builds up a buffer of product on the entrance to the leaflet placer and allows operators to perform routinely tasks without compromising line efficiency. 
+
+In Figure \ref{fig:evolution_productivity} the evolution of the $\Delta Productivity (\%)$ can be observed. We notice that in the first week of applying the new line operator distribution, planned production was not met. As described earlier operators could not keep up with the task demand whilst maintaining line efficiency so the \textit{Buffering} method was introduced.
+
+\begin{figure}[ht]
+\centering
+\includegraphics[width=\textwidth]{Pictures/Evolution_of_Productivity_along_the_weeks.png}
+\caption{Evolution of $\Delta Productivity (\%)$ along the weeks}
+\label{fig:evolution_productivity}
+\end{figure}
+
+This particular line only ran 9 weeks from February until May, as it is not one of the saturated lines in the plant. However for the 8 weeks that run with the new buffering method and General Standard of the Worker, productivity increased an average of \textbf{22.47\%}. 
 
 \section{Results}
 
@@ -636,7 +650,15 @@ By reducing the production time from 3,488 hours/year to 1,866 hours/year we are
 
 The current hourly rate for a pharmaceutical operator in Spain is approximately 16.4\euro~before taxes \cite{ccoo_convenio_nodate}.
 
-A total savings of 6,488 operator hours a year represents a total savings amount of \textbf{106,400\euro} saved in direct labor work.
+A total savings of 6,488 operator hours a year represents a total savings amount of \textbf{106,400\euro/yearly} saved in direct labor work.
+
+\subsection{Improvement of line productivity}
+On the other hand, there is the results form the project described in section \ref{Productivity_improvement}.
+
+The Liquids Line is not a saturated line in the plant. Which mean the planned time for the line is only the 9 total weeks the exercise was run on and there weren't any other Work Orders placed in the line for the remanding of the year.
+The profit calculation approach follows a similar logic as the section before. The total hourly plan of the line yearly was of 720 h. From Equation \ref{eq:delta_productivity} it is possible to isolate the parameter $\textit{Operation Time} \cdot \textit{N}_{\mathrm{operators},1}$ as this are the total number of worked hours by operators. 
+
+To achieve the same production there is now a requirement to operate the line during 880 h but the total worked time by operators comes down to 1,760h versus the previous 2,160h. This savings of 400h at the same 16.4\euro~as previously, comes to a total saving of \textbf{6,500\euro/yearly}.
 
 
 
