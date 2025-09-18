@@ -1,0 +1,27 @@
+\begin{ganttchart}[
+    hgrid, 
+    vgrid,
+    time slot format=isodate,
+    compress calendar,
+    x unit=1.2cm,
+    y unit title=1cm,
+    y unit chart=1cm,
+    title label font=\bfseries\footnotesize,
+    bar label font=\footnotesize,
+    milestone label font=\footnotesize,
+    bar/.append style={fill=blue!40},
+    group/.append style={fill=gray!30}
+]{2025-01-01}{2025-07-31} % overall project timeline
+%
+% === Titles for months ===
+\gantttitlecalendar{year, month=shortname} \\
+%
+% === Macro Phases ===
+\ganttgroup{Study of Kaizen Production System}{2025-01-10}{2025-02-07} \\
+\ganttgroup{Initial Planning and Data Extraction Methodology}{2025-02-10}{2025-02-21} \\
+\ganttgroup{Current State Analysis}{2025-02-24}{2025-02-26} \\
+\ganttgroup{Solution Design}{2025-02-27}{2025-03-05} \\
+\ganttgroup{Implementation}{2025-03-03}{2025-04-20} \\
+\ganttgroup{Rollout}{2025-03-10}{2025-07-31} \\
+\ganttgroup{Control}{2025-02-17}{2025-07-31} \\
+\end{ganttchart}

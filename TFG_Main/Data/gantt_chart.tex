@@ -1,0 +1,72 @@
+
+\begin{landscape}
+
+\begin{ganttchart}[
+    hgrid,
+    vgrid,
+    time slot format=isodate,
+    x unit=0.07cm,
+    y unit chart=0.35cm,
+    y unit title=1cm,
+    group/.append style={fill=gray!30},          % only colors/styles
+    bar/.append style={fill=blue!40},
+    bar incomplete/.append style={fill=red!40},
+    milestone/.append style={fill=orange},
+    title label font=\large\bfseries,            % font for calendar header
+    bar label font=\small,        % font for tasks
+    milestone label font=\small   % font for milestones
+]{2025-02-01}{2025-08-10}
+
+\gantttitlecalendar{year, month=shortname} \\
+
+% === Phase 1: Study of Techniques ===
+\ganttgroup{Study of Kaizen Production System}{2025-02-10}{2025-02-15} \\
+\ganttmilestone{Initial Planning and Data Extraction Method}{2025-02-10} \\
+\ganttmilestone{Presentation and First Factory Visit}{2025-02-17} \\
+\ganttmilestone{Pilot Line Study and Design}{2025-02-18} \\
+\ganttmilestone{Initial Data Analysis}{2025-02-19} \\
+\ganttmilestone{Data Templates (Jars Line)}{2025-02-20} \\
+\ganttmilestone{Data Templates (Liquids Line)}{2025-02-21} \\
+
+% === Phase 2: Current State Analysis ===
+\ganttgroup{Current State Analysis}{2025-02-24}{2025-02-26} \\
+\ganttmilestone{Start Data Recording (Jars Line)}{2025-02-24} \\
+\ganttmilestone{Start Data Recording (Liquids Line)}{2025-02-24} \\
+\ganttmilestone{Video Setup (Jars Line)}{2025-02-24} \\
+\ganttmilestone{Shadowing: Full Cleaning (Jars)}{2025-02-25} \\
+\ganttmilestone{Shadowing: Production (Liquids)}{2025-02-26} \\
+
+% === Phase 3: Solution Design ===
+\ganttgroup{Solution Design}{2025-02-27}{2025-03-05} \\
+\ganttmilestone{Daily Kaizen Boards}{2025-02-27} \\
+\ganttmilestone{First SMED Iteration (Cleaning Video)}{2025-03-03} \\
+\ganttmilestone{SMED Workshop with Key Users}{2025-03-04} \\
+\ganttmilestone{SMED Training + Workshop}{2025-03-05} \\
+\ganttmilestone{Shadowing Analysis (Liquids Line)}{2025-03-05} \\
+
+% === Phase 4: Implementation ===
+\ganttgroup{Implementation}{2025-03-03}{2025-04-05} \\
+\ganttmilestone{Daily Kaizen Kick-off}{2025-03-03} \\
+\ganttmilestone{Standard Full Cleaning (Jars)}{2025-03-06} \\
+\ganttmilestone{Marking \& Adjustments (Jars)}{2025-03-07} \\
+\ganttmilestone{1st Worker Standard Iteration (Liquids)}{2025-03-14} \\
+\ganttmilestone{2nd Worker Standard Iteration (Liquids)}{2025-04-04} \\
+
+% === Phase 5: Rollout ===
+\ganttgroup{Rollout}{2025-03-10}{2025-04-20} \\
+\ganttmilestone{Kick-off + Video Monitoring (Liquids)}{2025-03-10} \\
+\ganttbar{Validation and Implementation}{2025-03-10}{2025-07-31} \\
+\ganttmilestone{Standard Audits (Jars)}{2025-03-15} \\
+\ganttbar{Data Analysis (Jars)}{2025-03-10}{2025-07-31} \\
+\ganttmilestone{1st Worker Standard Test (Liquids)}{2025-03-17} \\
+\ganttmilestone{2nd Worker Standard Test (Liquids)}{2025-03-20} \\
+\ganttmilestone{Standard Audits (Liquids)}{2025-03-17} \\
+\ganttbar{Data Analysis (Liquids)}{2025-03-17}{2025-06-30} \\
+
+% === Phase 6: Control ===
+\ganttgroup{Control}{2025-02-17}{2025-07-31} \\
+\ganttbar{Steering Committee}{2025-02-17}{2025-07-31} \\
+
+\end{ganttchart}
+
+\end{landscape}

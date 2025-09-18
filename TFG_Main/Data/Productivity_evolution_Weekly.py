@@ -54,8 +54,8 @@ ax1.plot(x, p(x), color="black", linestyle="-", linewidth=2, label="Trendline")
 ax1.axhline(goal, color="green", linestyle="--", linewidth=2, label=f"Theoretical goal: {goal:.1f}%")
 
 # Event lines
-ax1.axvline(x=9.5, color="darkgreen", linestyle="-", linewidth=2, zorder=0)
-ax1.text(8.75, ax1.get_ylim()[1]*0.98, "Start of Buffering Technique",
+ax1.axvline(x=15.5, color="darkgreen", linestyle="-", linewidth=2, zorder=0)
+ax1.text(14.75, ax1.get_ylim()[1]*0.98, "Start of Buffering Technique",
          rotation=90, va='top', color="darkgreen", fontsize=12)
 '''
 ax1.axvline(x=10.5, color="darkblue", linestyle="-", linewidth=2, zorder=0)
@@ -89,7 +89,7 @@ ax1.set_xticklabels(df["Week"].astype(int))
 ax1.xaxis.set_major_locator(MaxNLocator(integer=True))
 ax1.xaxis.set_major_locator(MultipleLocator(1))
 ax1.yaxis.set_major_formatter(PercentFormatter())  # show % on y-axis
-ax1.set_xlim(5,20)
+ax1.set_xlim(11,26)
 
 # Annotate bars with %
 for p in bars:

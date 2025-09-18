@@ -25,6 +25,10 @@
 \usepackage{censor}
 \usepackage[paper=portrait,pagesize]{typearea}
 \usepackage{pdflscape}
+\usepackage{pgfgantt}
+\usepackage{pdflscape} % add in preamble
+\usepackage{tikz} % pgfgantt relies on TikZ
+\usepackage{multirow}
 \usepackage{geometry}
     \geometry{
     a4paper,
@@ -152,10 +156,86 @@
 % TABLE OF CONTENTS
 \tableofcontents
 \clearpage
-\newpage
 
-\section{Preface}\label{preface}
-\subsection{The \gls{kaizen} Philosophy}\label{philosofy}
+\newpage
+\section{Preface}
+\subsection{Project Origin}
+
+This project is part of the curricular internship carried out at the consulting firm Kaizen Institute, which began in February 2025. Kaizen Institute specializes in continuous improvement, a concept that will be defined in the first chapter (\ref{introduction}) as it provides the framework for understanding this project’s approach.
+
+The project originated when \textit{Sincrofarm}, a pharmaceutical manufacturing company, decided to initiate a transformation process in its facility and contacted Kaizen Institute for guidance and advisory support throughout the process.
+
+The company’s production model is similar to that of a laboratory: it operates in sections, producing different elements separately. Each section has specific cycle times and production capacities that are not always compatible with those of other sections, resulting in waiting times, overproduction, or, in some cases, underproduction. Furthermore, due to stringent internal quality standards and regulatory requirements, a significant portion of operating time is spent on non-value-added activities, such as cleaning equipment or performing machine changeovers. This way of working has been effective for over forty years, but the company’s exponential growth now prevents it from meeting order demand consistently, limiting its competitiveness in the sector. For this reason, modernization and adaptation to customer demand are essential to meet deadlines and increase profitability.
+
+The project discussed below is extensive and divided into two stages: increasing line efficiency and enhancing line productivity. A daily management system called Daily Kaizen was also implemented during the course of the project; however, the details of this system are beyond the scope of the present work.
+
+\subsection{Motivation}
+This project is highly rewarding both personally and professionally, as it presents the challenge of completely transforming a production plant, overseeing the proposed changes, and supporting the personnel throughout the process. It provides the opportunity to drive a significant positive impact within the company—not only economically but also in terms of the work environment—by considerably improving both working conditions and ways of working.
+
+One of the personal motivations behind this project is witnessing the practical application of our work and seeing that it has a tangible purpose. Furthermore, the project is complex: it required me to apply the knowledge gained during my university studies while also challenging my perspective, as I often had to address both technical and managerial aspects, the latter being a new experience for me. Many changes needed to be implemented, which inevitably led to unforeseen challenges along the way. This process allowed me to grow professionally, learning to tackle problems proactively, find solutions, and adapt without letting obstacles take control. Growth comes from stepping outside our comfort zone, and this project has contributed significantly to my development as a professional.
+
+The greatest motivation, however, comes from seeing tangible results: observing the project from start to finish, with all its unforeseen challenges, is immensely rewarding. It provides a complete perspective of the process and enables the extraction of lessons and improvements not only for this project but also for future initiatives.
+
+\subsection{Planning and Project Stages}
+The project was delivered in the following stages:
+
+\input{Data/macro_task_table.tex}
+
+In the Appendix \ref{apx:Project_details}, Figure \ref{fig:Detailed_gantt} a much more detailed Gantt Chart of the project phases is included for further reference.
+%The following Gantt diagram allows a more visual view of the project phases.
+
+%\input{Data/macro_gantt.tex)
+
+\clearpage
+\newpage
+\section{Introduction}\label{Introduction}
+\subsection{Introducing the company}
+
+\textit{Sincrofarm} is a pharmaceutical company located in Catalonia, specializing in Contract Manufacturing and Packaging Services for medicines and dietary supplements, both for human and veterinary use.
+
+Its facilities are equipped with state-of-the-art machinery and cover a total surface area of 7,200 m², distributed across two specialized plants: one dedicated to pharmaceutical manufacturing and the other to nutraceuticals.
+
+Some of the main products manufactured include:
+
+\begin{itemize}
+\item Collagen supplements
+\item Magnesium citrate supplements
+\item Lactase-based solutions
+\item \textit{Lactobacillus}-based probiotics
+\end{itemize}
+
+The company employs more than 400 people, with approximately 80% of the workforce working directly on the shop floor.
+
+Production is organized into several manufacturing areas and work lines:
+
+\begin{itemize}
+\item \textbf{TMP (Raw Materials Handling)}: Responsible for preparing and mixing the active components, whether liquids or solids, with the required excipients.
+\item \textbf{PI (Compression)}: Dedicated to compressing solid mixtures into tablets.
+\item \textbf{PAC (Packaging and Conditioning)}: Responsible for product presentation and packaging, with three main formats:
+\begin{itemize}
+\item \textbf{Liquids}: Bottled liquid products.
+\item \textbf{Jars}: Solid tablets packaged in containers.
+\item \textbf{Pouches}: Single-use sachets containing uncompressed solids.
+\end{itemize}
+\end{itemize}
+\subsection{Scope and pilots}
+The scope of this project can be narrow down into 2 \textit{\gls{kaizen} Events}, each one will be implemented in a different work line as a pilot. 
+
+Each \gls{kaizen} Event will be:
+\begin{itemize}
+  \item Improvement of Line Efficiency.
+    \subitem Pilot: "Jars" Line
+    \subitem \gls{kpi}: Line OEE
+    \subitem Goal: 40\% OEE
+  \item Improvement of line Productivity
+    \subitem Pilot: "Liquids" Line
+    \subitem \gls{kpi}: Line Productivity
+\end{itemize}
+
+
+\newpage
+\section{The KAIZEN Methodology}\label{methodology}
+\subsection{KAIZEN Origins}\label{kaizen_origins}
 After World War II, Toyoda Kiichiro, then president of the Toyota Motor Company, saw the need
 to catch up with America to assure the survival of the automobile industry of Japan. Taiichi Ohno,
 Toyota’s engineer, had a challenge: how to build a diversified line of products with the limited
@@ -219,58 +299,145 @@ possible, improving customer experience.
   \item Be scientific and transparent
     \subitem As important as identifying problems, is knowing how to explain and substantiate one’s findings, supporting them with data. \gls{visualmanagement} is a basal tool of \gls{kaizen}, that highlights problems and allows for a quicker reaction to them.
 \end{itemize}
+
+\subsection{Brief introduction to the SMED}
+The \gls{SMED} is a technique that helps us distinguish between Internal and External tasks as described in \citeauthor{dillon_revolution_1985} \cite{dillon_revolution_1985} book \citetitle{dillon_revolution_1985}. The core principle of the \gls{SMED} system is to significantly reduce the time required for machine changeovers. This is achieved by converting as many setup operations as possible from \textit{internal} tasks (which can only be performed when the machine is stopped) to \textit{external} tasks (which can be completed while the machine is still running). The goal is to make all changeovers last less than ten minutes, thereby maximizing production time and enabling smaller, more flexible batch sizes.
+
+This core principle of \textit{internal} vs \textit{external} tasks can be applied to multiple operations, not only limited to changeovers. In this case it will be applied to Cleanings. The basics steps described in \citeauthor{dillon_revolution_1985} book are as follows:
+
+\begin{enumerate}
+  \item Identify all tasks performed during the operation.
+  \item Identify all participants of the operation.
+  \item Distinguish between \textit{internal} and \textit{external} tasks.
+  \item Convert as much tasks from \textit{internal} to \textit{external}.
+  \item Distribute and balance internal tasks in order to minimize machine stopping time.
+  \item Standardize procedure, create checklists and \gls{OPL}. 
+  \item Measure progress and identify bottle necks.
+\end{enumerate}
+
+The \gls{SMED} is a technique that helps to significantly reduce the time required for machine changeovers and setups. Developed by Shigeo Shingo in the 1950s, the core principle is to convert as many setup operations as possible from \textit{internal} tasks (those that can only be performed when the machine is stopped) to \textit{external} tasks (those that can be completed while the machine is still running). The ultimate goal is to complete changeovers in less than ten minutes (a "single minute" in the literal sense of the word), thereby maximizing production time and enabling smaller, more flexible batch sizes.
+
+As detailed in Shingo's foundational book, \citetitle{dillon_revolution_1985} \cite{dillon_revolution_1985}, this methodology is not limited to product changeovers but can be applied to any process with internal and external tasks, such as the cleaning procedure identified. The SMED implementation process follows these distinct steps:
+
+\begin{enumerate}
+    \item \textbf{Preliminary Stage}: Identify and analyze the current setup or cleaning process. This involves documenting all tasks and their timings.
+    \item \textbf{Stage 1: Separate Internal and External Tasks}: Critically evaluate each step of the process and categorize it as either internal or external.
+    \item \textbf{Stage 2: Convert Internal from External Tasks}: This is the most crucial phase. Brainstorm and implement changes that allow internal tasks to be performed while the machine is running. For example, blowing off compressed air while the line is up.
+    \item \textbf{Stage 3: Streamline All Remaining Tasks}: Once the conversion is complete, focus on improving the efficiency of the remaining internal and external tasks. This involves using tools like checklists, visual aids, and improved tool organization. For instance, using quick-release clamps instead of bolts.
+    \item \textbf{Sustain and Standardize}: Create and maintain standardized work instructions, checklists and \gls{OPL}s to lock in the improvements. Establish a system for measuring and tracking progress to identify future opportunities.
+\end{enumerate}
+This structured approach ensures a systematic and measurable reduction in changeover or cleaning time, which directly increases equipment availability.
+
+\subsection{A Brief Description on Line Balancing and Yamazumi}
+The foundational principle of line balancing was applied to the production process with the primary objective of distributing tasks equally among operators. This approach aimed to eliminate bottlenecks and minimize idle time, thereby optimizing workflow. The key analytical tool used for this work was the Yamazumi chart. This visual method, which literally translates to "to pile up," provided a graphical representation of each operator's work content and the time required for their individual tasks. By visualizing the cumulative workload for all team members, the Yamazumi chart immediately highlighted the imbalances and bottlenecks that were impeding the process. This visual data was critical for identifying and eliminating the forms of waste known as muda, mura, and muri—specifically, the waste of waiting, unevenness, and overburden—that were inherent in the unbalanced line. Through the strategic use of the Yamazumi chart, tasks were redistributed to create a smoother, more efficient, and balanced workflow, which directly contributed to the overall objective of maximizing productivity.
+
+In conjunction with line balancing, the \textit{Takt Time} is a critical metric for determining the required pace of production to meet customer demand. It serves as a heartbeat for the production process, establishing a baseline against which the balanced line's performance can be measured. The formula for calculating Takt Time is defined as (\ref{eq:Takt_Time}):
+
+\begin{equation}\label{eq:Takt_Time}
+\text{Takt Time} = \frac{\text{Total Available Production Time}}{\text{Customer Demand}}
+\end{equation}
+
+The \textit{Takt Time} will be used to determine the number of operators needed on the line in order to cover customer demand.
+As an example let's look onto the planned production for one shift. Let's say it is 26,400 units that must be covered in one shift of 7.33h. In this case following equation \ref{eq:Takt_Time}, the \textit{Takt Time} must be:
+
+\begin{equation}\label{eq:Takt_Time_example}
+  \text{Takt Time} = \frac{7,33 h \cdot \frac{3,600 s}{1 h}}{26,400 units} = 0.99 units / s 
+\end{equation}
+Meaning that the line should be averaging a production of roughly 1 unit per second.
+
 \clearpage
 \newpage
+\section{Key Performance Indicators and mathematical models}
+\subsection{OEE and profits calculation method}
+Overall Equipment Effectiveness (OEE) is a standard metric used to measure the efficiency of a production line. It identifies how much of the planned production time is truly productive. OEE is calculated by multiplying three core components: \nameref{availability}, \nameref{performance}, and \nameref{quality}.
 
-\section{The Problem at hand}\label{The problem}
-\subsection{Introducing the company}
+\subsubsection{Availability}\label{availability}
+Availability measures the proportion of scheduled production time during which equipment is operational and ready for use. It accounts for planned downtime, such as maintenance or shift breaks, as well as unplanned losses caused by equipment breakdowns or delays.\cite{calandreli_maximizing_2025}
+\begin{equation}\label{eq:availability}
+  A = \frac{\text{Operating Time (h)}}{\text{Planned Time (h)}}
+\end{equation}
+With that definition, first 2 main terms may be acknowledged:
+\begin{enumerate}
+  \item Planned Time: The total scheduled production time. 
+  \item Operating time: The Planned Time minus all planned stoppages like changeovers, cleaning, and scheduled breaks.
+\end{enumerate}
 
-Now that we have introduce the base methodology of \gls{kaizen} we must understand the focus of this work.
-The project describe has been implemented in a Pharmacology Company located on the Catalonia area. It focuses primarily on providing Contract Manufacturing and Packaging Services for Medicines and Dietary Supplements, both for Human and Veterinary use.
+\subsubsection{Performance}\label{performance}
+Performance evaluates whether equipment is running at its optimal speed
+during production. It captures losses due to reduced speed or minor stoppages that may not
+halt production but reduce efficiency.\cite{calandreli_maximizing_2025}
 
-The facilities are equipped with state-of-the-art machinery and have a total area of 7.200 m², distributed across two facilities, one dedicated to the manufacturing of pharmaceuticals and the other to nutraceuticals.
+\begin{equation}\label{eq:performance}
+  \mu = \frac{\text{Actual Units Produced (units)}}{\text{Operating Time (h)} \cdot \text{Nominal Speed (units/h)}}
+\end{equation}
 
-In total the company has over 400 employees and about 80\% of the workforce is established on the shop floor.
+\subsubsection{Quality}\label{quality}
+Quality assesses the proportion of defect-free products produced relative to the total output. This metric highlights losses due to rework or defective items, which reduce the overall effectiveness of the production process.\cite{calandreli_maximizing_2025}
 
-There are several manufacturing areas and work lines:
+\begin{equation}\label{eq:quality}
+  Q=\frac{\text{Total OK unit output (units)}}{\text{Actual Units Produced (units)}}
+\end{equation}
 
-\begin{itemize}
-  \item TMP (Raw materials handling):
-    \subitem This section is where the mixture of active components, either liquids or solids, and ingredients are composed.
-  \item PI (Compression):
-    \subitem In this section compression of solids into tablets occurs.
-  \item PAC (Conditioning):
-    \subitem In this section the formula is conditioned. There are 3 forms of presentation:
-    \subsubitem Bottles: Only for liquids.
-    \subsubitem Jars: Containers of tablets for solids.
-    \subsubitem Pouches: For single use uncompress solids.
-\end{itemize}
+\subsubsection{OEE calculation}
+By combining these three components, the final OEE formula is derived, which shows the overall efficiency of the production line.
 
-\subsection{Scope and pilots}
-The scope of this project can be narrow down into 3 \textit{\gls{kaizen} Events}, each one will be implemented in a different work line as a pilot. 
+\begin{equation}\label{OEE_calc}
+  OEE=A \cdot \mu \cdot Q
+\end{equation}
 
-Each \gls{kaizen} Event will be:
-\begin{itemize}
-  \item Improvement of Line Efficiency.
-    \subitem Pilot: "Jars" Line
-    \subitem \gls{kpi}: Line OEE
-    \subitem Goal: 40\% OEE
-  \item Improvement of line Productivity
-    \subitem Pilot: "Liquids" Line
-    \subitem \gls{kpi}: Line Productivity
-  \item Improvement of planning
-    \subitem Pilot: Sourcing and production planning of PAC area.
-    \subitem \gls{kpi}: OTIF 
-  \item Creating a system for daily management and continuous improvement culture.
-    \subitem Pilot: "Jars" Line
-    \subitem \gls{kpi}: Economic impact of meetings sourced improvement ideas.
-\end{itemize}
+An OEE score of 100\% represents perfect equipment effectiveness, with no downtime, optimal
+performance, and zero defects.\cite{pound_factory_2014} 
+
+Or in fair terms:
+
+\begin{equation}\label{OEE_calc_cancel_termns}
+  \begin{split}
+    OEE = \frac{\cancel{\text{Operating Time (h)}}}{\text{Planned Time (h)}} \cdot \frac{\cancel{\text{Actual Units Produced (units)}}}{\cancel{\text{Operating Time (h)}} \cdot \text{Nominal Speed (units/h)}} \cdot \\
+    \cdot \frac{\text{Total OK unit output (units)}}{\cancel{\text{Actual Units Produced (units)}}}=\frac{\text{Total OK unit output (units)}}{\text{Planned Time (h)} \cdot \text{Nominal Speed (units/h)}}
+\end{split}
+\end{equation}
+
+\begin{small}
+\begin{equation}\label{OEE_calc_extended}
+  OEE=A \cdot \mu \cdot Q=\frac{\text{Total OK unit output (units)}}{\text{Planned Time (h)} \cdot \text{Nominal Speed (units/h)}}
+\end{equation}
+\end{small}
+
+\subsubsection{Profit Calculation}\label{OEE_profit_calc}
+Now that the concept of $OEE$ is clear, going back to equation \ref{eq:production_capacity_calc_OEE}. In \gls{kaizen} philosophy the focus is on the non investment improvements. Changing the Nominal Speed of a line or machine could mean investing a huge amount of money in technology, instead of focusing on eliminating \gls{muda}. That's why the project focuses on the OEE as a \gls{kpi} as the main metric.
+
+The augmented capacity derived from an improvement in OEE can be quantified as the reduced planned operating time of the line. In this work there will not be a focus on improving sales directly, so the Total Number of units produced will be fixed. There will be no focus on investing in new equipment, so the Nominal Speed of the line will stay constant. Every point of improvement of OEE will be inversely related to a decreased in the need for more planned time which in turns decreases the operating cost of labor of the line. Relating to the objective function depicted in the next section, equation \ref{Production_capacity_calc}.
+
+\subsection{Productivity and profits calculation method}
+\subsubsection{Productivity}
+
+For this study, productivity will be calculated using Equation \ref{eq:Objective_Function_Productivity}. Because products produced on the same line may exhibit different standard line speeds, this factor is incorporated to enable fair comparisons across different product types. For the remainder of the analysis, productivity improvements will be referred as $\Delta \text{Productivity}$.
+Measured relative to the previous standard as described in \citeauthor{townsend_basics_2012}'s book \citetitle{townsend_basics_2012} \cite{townsend_basics_2012}.
+
+
+\begin{equation} \label{eq:delta_productivity}
+  \Delta \text{Productivity} (\mathrm{\%}) 
+=
+\frac{
+  \left(\dfrac{\text{Actual Unit Output}}{\text{Planned Operation Time}_{1} \cdot \text{Actual N}_{\mathrm{operators},1}}\right)
+}{
+  \left(\dfrac{\text{Planned Unit Output}}{\text{Planned Operation Time}_{0} \cdot \text{Planned N}_{\mathrm{operators},0}}\right)
+}-1
+\end{equation}
+
+Here, the subscript 0 refers to the baseline or historical production values, while subscript 1 corresponds to the post line-balancing measurements.
+
+\subsubsection{Profit Calculation}
+
+In alignment with $OEE$ profit analysis, each incremental gain in productivity is translated directly into cost savings by reducing the total operation time required to produce the same number of units. This approach establishes a direct quantitative link between productivity improvements and financial performance, consistent with Lean Kaizen principles of continuous improvement and cost efficiency.
+
+
 
 \clearpage
 \newpage
 \section{Improvement of Line Efficiency}\label{OEE_improve}
 \subsection{Objective Function}
-As in any optimization problem, we must first define the objective function. 
+As in any optimization problem, the objective function must be defined. 
 In the \gls{kaizen} methodology, improvement efforts are directed toward what is most valuable for the client, often summarized by the principles of \gls{gqcdm}:
   \begin{itemize}
     \item \textbf{Growth}: Focus on expanding market share, innovation, and business development.
@@ -301,69 +468,9 @@ It is evident that production output is strongly embedded in the cost structure 
 A significant share of manufacturing cost is related to the utilization of machines and operators. 
 By producing more in less time, the cost per unit decreases, thereby improving overall competitiveness.
 
-\subsection{OEE and profits calculation method}
-Overall Equipment Effectiveness (OEE) is a standard metric used to measure the efficiency of a production line. It identifies how much of the planned production time is truly productive. OEE is calculated by multiplying three core components: \nameref{availability}, \nameref{performance}, and \nameref{quality}.
-
-\subsubsection{Availability}\label{availability}
-Availability measures the proportion of scheduled production time during which equipment is operational and ready for use. It accounts for planned downtime, such as maintenance or shift breaks, as well as unplanned losses caused by equipment breakdowns or delays.\cite{calandreli_maximizing_2025}
-\begin{equation}\label{eq:availability}
-  A = \frac{\text{Operating Time (h)}}{\text{Planned Time (h)}}
-\end{equation}
-With that definition we first have to acknowledge 2 main terms:
-\begin{enumerate}
-  \item Planned Time: The total scheduled production time. 
-  \item Operating time: The Planned Time minus all planned stoppages like changeovers, cleaning, and scheduled breaks.
-\end{enumerate}
-
-\subsubsection{Performance}\label{performance}
-Performance evaluates whether equipment is running at its optimal speed
-during production. It captures losses due to reduced speed or minor stoppages that may not
-halt production but reduce efficiency.\cite{calandreli_maximizing_2025}
-
-\begin{equation}\label{eq:performance}
-  \mu = \frac{\text{Actual Units Produced (units)}}{\text{Operating Time (h)} \cdot \text{Nominal Speed (units/h)}}
-\end{equation}
-
-\subsubsection{Quality}\label{quality}
-Quality assesses the proportion of defect-free products produced relative to the total output. This metric highlights losses due to rework or defective items, which reduce the overall effectiveness of the production process.\cite{calandreli_maximizing_2025}
-
-\begin{equation}\label{eq:quality}
-  Q=\frac{\text{Total OK unit output (units)}}{\text{Actual Units Produced (units)}}
-\end{equation}
-
-\subsubsection{OEE calculation}
-By combining these three components, we get the final OEE formula, which shows the overall efficiency of the production line.
-
-\begin{equation}\label{OEE_calc}
-  OEE=A \cdot \mu \cdot Q
-\end{equation}
-
-An OEE score of 100\% represents perfect equipment effectiveness, with no downtime, optimal
-performance, and zero defects.\cite{pound_factory_2014} 
-
-Or in fair terms:
-
-\begin{equation}\label{OEE_calc_cancel_termns}
-  \begin{split}
-    OEE = \frac{\cancel{\text{Operating Time (h)}}}{\text{Planned Time (h)}} \cdot \frac{\cancel{\text{Actual Units Produced (units)}}}{\cancel{\text{Operating Time (h)}} \cdot \text{Nominal Speed (units/h)}} \cdot \\
-    \cdot \frac{\text{Total OK unit output (units)}}{\cancel{\text{Actual Units Produced (units)}}}=\frac{\text{Total OK unit output (units)}}{\text{Planned Time (h)} \cdot \text{Nominal Speed (units/h)}}
-\end{split}
-\end{equation}
-
-\begin{small}
-\begin{equation}\label{OEE_calc_extended}
-  OEE=A \cdot \mu \cdot Q=\frac{\text{Total OK unit output (units)}}{\text{Planned Time (h)} \cdot \text{Nominal Speed (units/h)}}
-\end{equation}
-\end{small}
-
-\subsubsection{Profit Calculation}\label{OEE_profit_calc}
-Now that the concept of $OEE$ is clear we could go back to equation \ref{eq:production_capacity_calc_OEE}. In \gls{kaizen} philosophy we focus on the non investment improvements. As we can infer changing the Nominal Speed of a line or machine could mean investing a huge amount of money in technology, instead of focusing on eliminating \gls{muda}. That's why we will focus on OEE as a \gls{kpi} as the main metric for this project.
-
-We can quantify the augmented capacity derived from an improvement in OEE as the reduced planned operating time of the line. In this work we will not be focused on improving sales directly, so the Total Number of units produced will be fixed. We will not focus on investing in new equipment, so the Nominal Speed of the line will stay constant. Every point of improvement of OEE will be inversely related to a decreased in the need for more planned time which in turns decreases the operating cost of labor of the line. Relating back to the objective function, equation \ref{Production_capacity_calc}.
-
 \subsection{Identifying improvement opportunities}
 
-A comprehensive analysis of Overall Equipment Effectiveness (OEE) provides a structured approach to identifying production inefficiencies. Following a \gls{vsa}, our project focused on the key opportunities identified to improve OEE.
+A comprehensive analysis of Overall Equipment Effectiveness (OEE) provides a structured approach to identifying production inefficiencies. Following a \gls{vsa}, the project focused on the key opportunities identified to improve OEE.
 The project's baseline OEE was established after one month of observation in February, with the following results:
 \begin{itemize}
 	\item Availability=41.6\%
@@ -387,7 +494,7 @@ The main reason for this loss in availability is the time dedicated to cleaning 
   \item The removal of product from machinery overnight to prevent quality degradation.
 \end{itemize}
 
-Figure \ref{fig:availability_losses_pareto_chart}, provides a more detailed breakdown of the availability losses. By applying \gls{eightytwentyrule} we can focus on the key areas for improvement.
+Figure \ref{fig:availability_losses_pareto_chart}, provides a more detailed breakdown of the availability losses. By applying \gls{eightytwentyrule} the key areas for improvement can be narrowed down.
 
 \begin{figure}[!ht]
     \centering
@@ -400,50 +507,21 @@ The analysis confirms that a significant efficiency improvement can be achieved 
 
 \subsection{Implementing the SMED Methodology}
 
-\subsubsection{Brief introduction to the SMED}
-The \gls{SMED} is a technique that helps us distinguish between Internal and External tasks as described in \citeauthor{dillon_revolution_1985} \cite{dillon_revolution_1985} book \citetitle{dillon_revolution_1985}. The core principle of the \gls{SMED} system is to significantly reduce the time required for machine changeovers. This is achieved by converting as many setup operations as possible from \textit{internal} tasks (which can only be performed when the machine is stopped) to \textit{external} tasks (which can be completed while the machine is still running). The goal is to make all changeovers last less than ten minutes, thereby maximizing production time and enabling smaller, more flexible batch sizes.
-
-This core principle of \textit{internal} vs \textit{external} tasks can be applied to multiple operations, not only limited to changeovers. In this case we will apply it to Cleanings. The basics steps described in \citeauthor{dillon_revolution_1985} book are as follows:
-
-\begin{enumerate}
-  \item Identify all tasks performed during the operation.
-  \item Identify all participants of the operation.
-  \item Distinguish between \textit{internal} and \textit{external} tasks.
-  \item Convert as much tasks from \textit{internal} to \textit{external}.
-  \item Distribute and balance internal tasks in order to minimize machine stopping time.
-  \item Standardize procedure, create checklists and \gls{OPL}. 
-  \item Measure progress and identify bottle necks.
-\end{enumerate}
-
-\subsubsection{Brief introduction to the SMED}
-The \gls{SMED} is a technique that helps us to significantly reduce the time required for machine changeovers and setups. Developed by Shigeo Shingo in the 1950s, the core principle is to convert as many setup operations as possible from \textit{internal} tasks (those that can only be performed when the machine is stopped) to \textit{external} tasks (those that can be completed while the machine is still running). The ultimate goal is to complete changeovers in less than ten minutes (a "single minute" in the literal sense of the word), thereby maximizing production time and enabling smaller, more flexible batch sizes.
-
-As detailed in Shingo's foundational book, \citetitle{dillon_revolution_1985} \cite{dillon_revolution_1985}, this methodology is not limited to product changeovers but can be applied to any process with internal and external tasks, such as the cleaning procedure we have identified. The SMED implementation process follows these distinct steps:
-
-\begin{enumerate}
-    \item \textbf{Preliminary Stage}: Identify and analyze the current setup or cleaning process. This involves documenting all tasks and their timings.
-    \item \textbf{Stage 1: Separate Internal and External Tasks}: Critically evaluate each step of the process and categorize it as either internal or external.
-    \item \textbf{Stage 2: Convert Internal from External Tasks}: This is the most crucial phase. Brainstorm and implement changes that allow internal tasks to be performed while the machine is running. For example, blowing off compressed air while the line is up.
-    \item \textbf{Stage 3: Streamline All Remaining Tasks}: Once the conversion is complete, focus on improving the efficiency of the remaining internal and external tasks. This involves using tools like checklists, visual aids, and improved tool organization. For instance, using quick-release clamps instead of bolts.
-    \item \textbf{Sustain and Standardize}: Create and maintain standardized work instructions, checklists and \gls{OPL}s to lock in the improvements. Establish a system for measuring and tracking progress to identify future opportunities.
-\end{enumerate}
-This structured approach ensures a systematic and measurable reduction in changeover or cleaning time, which directly increases equipment availability.
-
-\subsubsection{Documentation of Tasks and Timings}
+\subsection{Documentation of Tasks and Timings}
 
 The first preliminary step of the \gls{SMED} methodology is to conduct a thorough analysis of the existing changeover process to establish a baseline. This was achieved through direct observation and detailed time studies, utilizing video analysis to capture every task performed by the operators and the shift leader inputs to calculate their precise timings. This meticulous documentation serves to eliminate assumptions and reveal previously unnoticed process inefficiencies. A summary of the identified tasks is presented in Table \ref{tbl:SMED_Tasks}, while the complete, detailed list can be found in the Appendix \ref{apx:SMED_details}.
 
 \input{Data/SMED_tasks_table_short.tex}
 
-\subsubsection{Separating Internal from External Tasks}
+\subsection{Separating Internal from External Tasks}
 
-With a comprehensive understanding of the current state, the team's focus shifted to categorizing each task. Through collaborative workshops and direct consultation with the operators we classified each task as either \textit{internal} or \textit{external}. This classification was visually represented in an \textit{E-I} chart, which laid the foundation for the subsequent conversion efforts. The resulting categorization is presented in Table \ref{tbl:SMED_Internal_External}.
+With a comprehensive understanding of the current state, the team's focus shifted to categorizing each task. Through collaborative workshops and direct consultation with the operators, each task was classified as either \textit{internal} or \textit{external}. This classification was visually represented in an \textit{E-I} chart, which laid the foundation for the subsequent conversion efforts. The resulting categorization is presented in Table \ref{tbl:SMED_Internal_External}.
 
 \input{Data/SMED_task_Internal_External.tex}
 
 This analysis revealed a significant opportunity for improvement. The total calculated internal time needed was a maximum of \textbf{3h 18min}, within a total cleaning time baseline of \textbf{5h 5min}. This gap represented the potential for substantial time savings. A visual representation of all operations and their timings is presented in the Appendix \ref{apx:SMED_details}, Figure \ref{fig:gantt_smed}.
 
-\subsubsection{Standardizing the New Procedure}
+\subsection{Standardizing the New Procedure}
 
 To lock in the improvements and ensure their sustainability, a new standard operating procedure was developed. This was not merely a document but a comprehensive set of visual tools created in close collaboration with the operators. Every step was detailed in a clear checklist to provide a quick visual reference for the entire process.
 
@@ -453,7 +531,7 @@ Also the new checklist of operation added the differentiation between internal a
 
 An example of the checklist used can be found in the Appendix \ref{apx:SMED_details} on Figure \ref{fig:checklist_smed}.
 
-\subsubsection{Results and Process Evolution}
+\subsection{Results and Process Evolution}
 
 The baseline data, collected during my observations in February 2025, established the average time for the Jars line cleaning procedure at \textbf{5 hours and 5 minutes}. This total time was composed of \textbf{3 hours and 18 minutes} of internal operations (performed with the line stopped) and \textbf{1 hour and 47 minutes} of external operations that were also conducted during downtime.
 
@@ -470,11 +548,13 @@ The evolution of the cleaning process time is visually documented in Figure \ref
 
 The data reveals a clear and immediate reduction in downtime following the introduction of the new Standard Operating Procedure and the strategic conversion of external tasks. Machine inactivity levels dropped drastically, reflecting the direct impact of the \gls{SMED} methodology. The figure also demonstrates a clear downward trend in cleaning time over the subsequent months, indicating a culture of continuous improvement and effective knowledge sharing among the operators. This sustained improvement is a powerful testament to the successful application of \gls{kaizen} principles beyond the initial project scope.
 
-A good example of this came in week 24, when we introduced a new, new, high-viscosity product tha disrupted established processes. At first, the adhesive characteristics proposed an unexpected challenge threatening the steady progress on the adaptation of the new standard. However, the team quickly used the standard procedure and checklist as a guide to break the problem down and adjust on the fly. Operators worked together to test ideas, tweak tools and cleaning products. Settling on a better method. By the next week, they had updated the standard and were back on track with our time targets. This showed just how adaptable the team had become and how a strong Kaizen culture helps us solve problems quickly and lock in improvements.
+A good example of this came in week 24, when we introduced a new, new, high-viscosity product tha disrupted established processes. At first, the adhesive characteristics proposed an unexpected challenge threatening the steady progress on the adaptation of the new standard. However, the team quickly used the standard procedure and checklist as a guide to break the problem down and adjust on the fly. Operators worked together to test ideas, tweak tools and cleaning products. Settling on a better method. By the next week, they had updated the standard and were back on track with the time targets. This showed just how adaptable the team had become and how a strong Kaizen culture helps us solve problems quickly and lock in improvements.
 
 
 As a conclusion, from the first observation of a Cleaning machine downtime of \textbf{5h 5min} to the final observation right before summer break of \textbf{1h 36min} there is an improvement of \textbf{68\%} reduction on machine downtime during Cleaning procedures.
 
+\clearpage
+\newpage
 \section{Improving Line Productivity}\label{Productivity_improvement}
 \subsection{Objective Function}
 This \gls{kaizen} event is grounded in \gls{gqcdm} principles, with a primary focus on enhancing line productivity through the optimal allocation of human resources necessary to complete a production batch. The analytical perspective shifts from traditional machine efficiency metrics to the evaluation of human time investment, identifying labor allocation as a critical lever for productivity improvement.
@@ -498,48 +578,7 @@ Where:
 
 Maximizing productivity, as defined by this function, inherently targets production cost reduction. By producing the greatest unit output for the minimum operator time, the event directly aligns with Kaizen principles of waste elimination and resource optimization, as each operator-hour represents a significant and reducible cost.
 
-\subsection{Productivity and profits calculation method}
-\subsubsection{Productivity}
-
-For this study, productivity will be calculated using Equation \ref{eq:Objective_Function_Productivity}. Because products produced on the same line may exhibit different standard line speeds, this factor is incorporated to enable fair comparisons across different product types. For the remainder of the analysis, we refer to productivity improvements as $\Delta \text{Productivity}$.
-Measured relative to the previous standard as described in \citeauthor{townsend_basics_2012}'s book \citetitle{townsend_basics_2012} \cite{townsend_basics_2012}.
-
-
-\begin{equation} \label{eq:delta_productivity}
-  \Delta \text{Productivity} (\mathrm{\%}) 
-=
-\frac{
-  \left(\dfrac{\text{Actual Unit Output}}{\text{Planned Operation Time}_{1} \cdot \text{Actual N}_{\mathrm{operators},1}}\right)
-}{
-  \left(\dfrac{\text{Planned Unit Output}}{\text{Planned Operation Time}_{0} \cdot \text{Planned N}_{\mathrm{operators},0}}\right)
-}-1
-\end{equation}
-
-Here, the subscript 0 refers to the baseline or historical production values, while subscript 1 corresponds to the post line-balancing measurements.
-
-\subsubsection{Profit Calculation}
-
-In alignment with $OEE$ profit analysis, each incremental gain in productivity is translated directly into cost savings by reducing the total operation time required to produce the same number of units. This approach establishes a direct quantitative link between productivity improvements and financial performance, consistent with Lean Kaizen principles of continuous improvement and cost efficiency.
-
-
-\subsubsection{A Brief Description on Line Balancing and Yamazumi}
-The foundational principle of line balancing was applied to the production process with the primary objective of distributing tasks equally among operators. This approach aimed to eliminate bottlenecks and minimize idle time, thereby optimizing workflow. The key analytical tool used for this work was the Yamazumi chart. This visual method, which literally translates to "to pile up," provided a graphical representation of each operator's work content and the time required for their individual tasks. By visualizing the cumulative workload for all team members, the Yamazumi chart immediately highlighted the imbalances and bottlenecks that were impeding the process. This visual data was critical for identifying and eliminating the forms of waste known as muda, mura, and muri—specifically, the waste of waiting, unevenness, and overburden—that were inherent in the unbalanced line. Through the strategic use of the Yamazumi chart, tasks were redistributed to create a smoother, more efficient, and balanced workflow, which directly contributed to the overall objective of maximizing productivity.
-
-In conjunction with line balancing, the \textit{Takt Time} is a critical metric for determining the required pace of production to meet customer demand. It serves as a heartbeat for the production process, establishing a baseline against which the balanced line's performance can be measured. The formula for calculating Takt Time is defined as (\ref{eq:Takt_Time}):
-
-\begin{equation}\label{eq:Takt_Time}
-\text{Takt Time} = \frac{\text{Total Available Production Time}}{\text{Customer Demand}}
-\end{equation}
-
-The \textit{Takt Time} will be used to determine the number of operators needed on the line in order to cover customer demand.
-As an example let's look onto the planned production for one shift. Let's say it is 26,400 units that must be covered in one shift of 7.33h. In this case following equation \ref{eq:Takt_Time}, the \textit{Takt Time} must be:
-
-\begin{equation}\label{eq:Takt_Time_example}
-  \text{Takt Time} = \frac{7,33 h \cdot \frac{3,600 s}{1 h}}{26,400 units} = 0.99 units / s 
-\end{equation}
-Meaning that the line should be averaging a production of roughly 1 unit per second.
-
-\subsubsection{Initial Line distribution}
+\subsection{Initial Line distribution}
 
 As stated in previous sections, the pilot line for this endeavour was the "Liquids" Line of the plant. In this line drugs sold and administered in liquid form are bottled, boxed, added with the dosification device necessary, packed into distribution boxes and palletized ready for shipment. 
 
@@ -582,9 +621,9 @@ The new Yamazumi chart with only 2 operators is shown in Figure \ref{fig:Yamazum
 
 In the end, the deliverable of this \gls{kaizen} Event is the generation of the General Standard of the Worker, which describes how the line should be operated with the planned resources. This Standard can be found in Appendix \textbf{??}
 
-\subsubsection{Results and Evaluation}
+\subsection{Results and Evaluation}
 
-Coming back to equation \ref{eq:delta_productivity} where we described the method for calculating the increment in productivity, here, as line \textit{Takt Time} and Unit Output stay the same we can simply calculate the theoretical gain on $\Delta Productivity$ as:
+Coming back to equation \ref{eq:delta_productivity} where the method for calculating the increment in productivity was described, here, as line \textit{Takt Time} and Unit Output stay the same, it can be simply calculated the theoretical gain on $\Delta Productivity$ as:
 
 \begin{equation}
   \Delta Productivity (\%) = 1-\frac{N_{operators,1}}{N_{operators,0}}=1-\frac{2}{3}=33\%
@@ -595,7 +634,7 @@ Meaning a direct increase in productivity expected should be of \textbf{33\%}.
 However in practice a reduced line efficiency was observed. The operators could not keep up with the tasks at hand. 
 This placed the challenge to modify the current line pace. After careful analysis it was concluded that the bottle neck for the line came from the bottling rate in the primary section. Which meant that the main secondary machine, the leaflet placer could be stopped at times and then sped up systematically in order to catch up to the primary production without ever compromising the line bottle neck. This method will be address as \textit{Buffering} from now on, as it builds up a buffer of product on the entrance to the leaflet placer and allows operators to perform routinely tasks without compromising line efficiency. 
 
-In Figure \ref{fig:evolution_productivity} the evolution of the $\Delta Productivity (\%)$ can be observed. We notice that in the first week of applying the new line operator distribution, planned production was not met. As described earlier operators could not keep up with the task demand whilst maintaining line efficiency so the \textit{Buffering} method was introduced.
+In Figure \ref{fig:evolution_productivity} the evolution of the $\Delta Productivity (\%)$ can be observed. Notice that in the first week of applying the new line operator distribution, planned production was not met. As described earlier operators could not keep up with the task demand whilst maintaining line efficiency so the \textit{Buffering} method was introduced.
 
 \begin{figure}[ht]
 \centering
@@ -604,8 +643,10 @@ In Figure \ref{fig:evolution_productivity} the evolution of the $\Delta Producti
 \label{fig:evolution_productivity}
 \end{figure}
 
-This particular line only ran 9 weeks from February until May, as it is not one of the saturated lines in the plant. However for the 8 weeks that run with the new buffering method and General Standard of the Worker, productivity increased an average of \textbf{22.47\%}. 
+This particular line only ran 9 weeks from March until June, as it is not one of the saturated lines in the plant. However for the 8 weeks that run with the new buffering method and General Standard of the Worker, productivity increased an average of \textbf{22.47\%}. 
 
+\clearpage
+\newpage
 \section{Results}
 
 \subsection{Improvement on line efficiency}
@@ -646,7 +687,7 @@ As Total Output units and Line Rated Speed remain a constant and for the profit 
 Meaning that the same production output can be achieved in almost half the time. This reduction of the 46\% of the necessary production time.
 
 The line currently employs 4 operators per shift, running 2 full shifts 5 days a week.
-By reducing the production time from 3,488 hours/year to 1,866 hours/year we are saving 6,488 hours/year of direct operator working time.
+By reducing the production time from 3,488 hours/year to 1,866 hours/year, saving 6,488 hours/year of direct operator working time.
 
 The current hourly rate for a pharmaceutical operator in Spain is approximately 16.4\euro~before taxes \cite{ccoo_convenio_nodate}.
 
@@ -660,7 +701,91 @@ The profit calculation approach follows a similar logic as the section before. T
 
 To achieve the same production there is now a requirement to operate the line during 880 h but the total worked time by operators comes down to 1,760h versus the previous 2,160h. This savings of 400h at the same 16.4\euro~as previously, comes to a total saving of \textbf{6,500\euro/yearly}.
 
+\clearpage
+\newpage
+\section{Sustainability and Ethical Analysis}
 
+The present project, responds to the industrial need for higher efficiency and competitiveness. Beyond the technical and economic outcomes, it is necessary to reflect on the environmental, social, and ethical dimensions. 
+
+\subsection{Environmental Sustainability}
+
+Two dimensions were considered following the EEBE sustainability cell framework:
+
+\begin{itemize}
+    \item \textbf{During the project execution:} The main environmental impacts were related to consultancy activities (energy consumption for IT equipment, transport to the job site, and limited use of office materials). The carbon footprint was minimized through digital documentation and reduced printing.
+      \subitem The carbon footprint calculated for the transportation, traveling 40km per trip during 51 days. Using a gasoline car with a consumption of 7.3 l/km.
+      The carbon footprint for transportation was of $303\ kg_{CO2 eq}$
+
+      \subitem The carbon footprint for the IT equipment used in the 660h of a laptop consuming 65W.
+      Taking in account the average emission rate of Spanish electricity production at $157 g_{CO2 eq/kWh}$ \cite{electricitymaps_spain_nodate}.
+      The carbon footprint for IT equipment was $67,35\ kg_{CO2 eq}$ 
+
+    \item \textbf{During the implementation of results:} The reduction of times leads to lower energy and water consumption on the production line. Additionally, fewer cleaning cycles result in a reduction of chemical residues, contributing to a smaller environmental footprint of the plant’s operations.
+\end{itemize}
+
+Some measures to limit the total footprint of the project were to limit the visits to the job site to the strictly necessary.
+
+\subsection{Ethical Implications}
+
+The following ethical aspects were considered:
+
+\begin{itemize}
+  \item \textbf{Needs addressed:} The work directly responds to the demand for reducing non–value-adding activities and increasing production efficiency. These needs were defined by the company’s operational strategy but are also aligned with the broader objective of responsible resource management (contributing to several UN Sustainable Development Goals, particularly SDG~9 and SDG~12) \cite{un_17_nodate}
+    \item \textbf{Beneficiaries:} The company benefits in terms of efficiency, cost savings, and competitiveness. Employees may benefit from reduced workload pressures and more structured workflows. No collective or community has been identified as negatively affected by this work.
+    \item \textbf{Societal benefit:} Increasing efficiency in pharmaceutical production lines contributes to more affordable medicines and greater access to essential health products, thereby generating a positive societal impact.
+    \item \textbf{Unintended consequences:} Potential risks include excessive focus on labor cost savings that could be misinterpreted as justification for workforce reductions. The project therefore emphasizes the use of time savings to reinvest in higher-value tasks and continuous improvement activities.
+    \item \textbf{Deontological aspects:} The work respects professional ethical standards, ensuring transparency, data integrity, and alignment with industrial safety and regulatory frameworks.
+\end{itemize}
+
+\begin{figure}[ht]
+  \centering
+  \includegraphics[width=0.8\textwidth]{Pictures/E_SDG_poster_WEB.png}
+  \caption{SDG (Sustainable Development Goals) by United Nations \cite{un_17_nodate}.}
+    \label{fig:SDG_picture}
+  \end{figure}
+
+\subsection{Overall Assessment}
+
+From both ethical and sustainability perspectives, the project is aligned with the principles of responsible engineering practice. It fosters efficiency without compromising workers’ rights, improves resource utilization, and contributes positively to the environmental performance of pharmaceutical operations. In this way, it supports the integration of \gls{kaizen} methodologies not only as a tool for economic gain but also as a driver of sustainable industrial development.
+
+
+
+\clearpage
+\newpage
+\section{Economic Evaluation}
+
+After presenting the results the topic of total project cost should be addressed.
+All calculations for consultancy cost will be quoted using the Spanish statute for Business Consultancy regulated statute group A3GAN1 \cite{ministerio_de_trabajo_y_economia_social_resolucion_2025}. Which states an hourly wage of 16.67\euro/h.
+
+The cost evaluation will take into account:
+\begin{itemize}
+  \item Direct Costs:
+    \subitem Total Consultancy hours: 660h
+    \subitem Transportation Costs: 12\euro~per day worked at job site.
+    \subitem Software Subscription (Office 365 Package): 657\euro
+    \subitem Office Materials (Paper, pens, sticky notes...): 500\euro~fixed cost.
+  \item Indirect Costs
+    \subitem Consultant Laptop Amortization over 5 year lifetime: 19.98\euro/month 
+  \item Strategic Costs:
+    \subitem Overhead Margin: 10\% of all cost
+\end{itemize}
+
+\input{Data/Cost_evaluation.tex}  % table with cost detailing
+
+\clearpage
+\newpage
+\section{Conclusions}
+
+The projects described demonstrate the tangible benefits of applying \gls{kaizen} manufacturing tools, in particular \gls{SMED} and line balancing techniques, to pharmaceutical production lines. Both approaches were implemented with the goal of reducing non–value-added time, increasing efficiency, and improving the utilization of available resources.
+
+The \gls{SMED} initiative led to a significant reduction in cleaning and changeover times, achieving a decrease of over 66\%. This improvement directly impacted the line's \textit{OEE}, which rose from a baseline of 28.3\% to 52.9\%, representing an increase of 24.6 percentage points. The resulting gain in availability translated into a potential reduction of production hours from 3,488 to 1,866 per year. When expressed in labor costs, this corresponds to savings of approximately \textbf{106,400\euro~per year}. 
+
+In parallel, the line balancing project demonstrated that productivity improvements can be achieved even in non-saturated lines. By redistributing operator tasks and improving workflow, the total operator working hours required for equivalent output decreased by 400 hours annually. This reduction yielded direct labor cost savings of approximately \textbf{6,500\euro~per year}.
+Although monetary savings did not keep up with the expectation, the concept was proven and in the future it will be expanded to higher demand lines.
+
+Taken together, these results validate the effectiveness of lean methodologies in a regulated pharmaceutical environment. The combination of \gls{SMED} and line balancing not only improved technical performance indicators such as \textit{OEE} and operator efficiency, but also translated into measurable economic impact. Beyond the quantified cost savings, the projects fostered a culture of continuous improvement, increased operator engagement, and built a foundation for sustaining long-term operational excellence.
+
+Future work could explore extending these techniques to other production lines, assessing the scalability of improvements, and integrating digital tools for real-time monitoring of \gls{kpi}s. Such efforts would further enhance the robustness of production systems and strengthen competitiveness in the industry.
 
 
 \clearpage
@@ -668,6 +793,18 @@ To achieve the same production there is now a requirement to operate the line du
 \printbibliography[heading=bibnumbered]
 \newpage
 \begin{appendices}
+  \section{Project Details}\label{apx:Project_details}
+    \begin{landscape}
+  \begin{figure}[ht]
+    \centering
+    \input{Data/gantt_chart.tex}
+    \caption{Detailed Project Gantt chart }
+    \label{fig:Detailed_gantt}
+    \end{figure}
+    \end{landscape}
+
+
+
   \section{SMED Task Detail}\label{apx:SMED_details}
   \input{Data/SMED_tasks_table.tex}
 
