@@ -37,7 +37,7 @@ colors = ["green" if x >= goal else "red" for x in df["OEE"]]
 
 # === Plot setup ===
 sns.set_theme(style="whitegrid")
-fig, ax1 = plt.subplots(figsize=(25, 12))
+fig, ax1 = plt.subplots(figsize=(10, 6))
 bar_width = 0.2
 
 # Bar chart
@@ -116,7 +116,7 @@ for m in months:
                  ha='center', va='center', fontsize=10, fontweight='bold', zorder=1)
 
 plt.subplots_adjust(bottom=0.25)
-ax1.legend(loc="best")
+ax1.legend(loc="center",bbox_to_anchor=(0.5,-0.3),ncols=4)
 
 # Title and save
 title = 'Evolution of OEE along the weeks'

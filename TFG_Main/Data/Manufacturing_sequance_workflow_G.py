@@ -7,8 +7,8 @@ Generates a manufacturing timeline chart for shareholder presentation.
 """
 # 🎨 Define modern color palette
 colors = {
-    'Product A': '#E94840',   #Light Red 
-    'Product B': '#00A3C2',  # Light Blue
+    'Product A': '#A90533',   #Light Red 
+    'Product B': '#103273',  # Light Blue
     'Product C': '#EE8976',  # Very Light Red
     'Complete Cleaning': '#737373', # Gray
     'Batch Change Over': '#BDBDBD', # Gray
@@ -149,9 +149,9 @@ handles = [mpatches.Patch(color=colors['Product A'], label='Product A'),
            mpatches.Patch(color=colors['Product C'], label='Product C'),
            mpatches.Patch(color=colors['Batch Change Over'], label='Batch Change Over'),
            mpatches.Patch(color=colors['Complete Cleaning'], label='Complete Cleaning')]
-ax.legend(handles=handles, loc='upper right', ncol=4, bbox_to_anchor=(1, 1.15))
+ax.legend(handles=handles, loc='center',bbox_to_anchor=(0.5, -0.15),ncols=5)
 
 plt.tight_layout()
-plt.savefig('manufacturing_timeline.png', dpi=300)
+plt.savefig('../Pictures/manufacturing_timeline.png', dpi=300)
 plt.show()
 
